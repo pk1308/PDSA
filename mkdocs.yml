@@ -7,8 +7,7 @@ nav:
     - week1/exception_handling.md
     - week1/Euclid's Algorithm.md
     - week1/class&object.md
-  - pdf: 
-      - pdf/embeding.md
+    - week1/time_it.md
 site_author: PK 
 site_description: >- 
   DESCRIPTION
