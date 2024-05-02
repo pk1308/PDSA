@@ -3,7 +3,10 @@ site_name:  PDSA
 # defeine TOC or order of website-
 nav:
   - Home: index.md
-  - test.md
+  - week1:
+    - week1/exception_handling.md
+    - week1/Euclid's Algorithm.md
+    - week1/class&object.md
   - pdf: 
       - pdf/embeding.md
 site_author: PK 
@@ -36,7 +39,6 @@ theme:
         name: Switch to light mode    
       primary: teal
       accent: lime    
-  # logo: PyTorch_logo_icon.svg
   
 extra:
   social:
