@@ -1,8 +1,8 @@
-name: ci 
+name:  github actions to host pages  
 on:
   push:
     branches:
-      - main
+      - master
 permissions:
   contents: write
 jobs:
