@@ -1,22 +1,19 @@
-# Project information
-site_name:  PDSA
-# defeine TOC or order of website-
+site_name: PDSA
 nav:
   - Home: index.md
+  - reference:
+      - reference/priya_suggestion.md
   - week1:
-    - week1/exception_handling.md
-    - week1/Euclid's Algorithm.md
-    - week1/class&object.md
-    - week1/time_it.md
-site_author: PK 
-site_description: >- 
-  DESCRIPTION
-
-# Repository
+      - week1/exception_handling.md
+      - week1/Euclid's Algorithm.md
+      - week1/class&object.md
+      - week1/time_it.md
+  - week2:
+      - week2/lec2.1.md
+site_author: PK
+site_description: DESCRIPTION
 repo_name: pk1308/PDSA
-repo_url: https://github.com/pk1308/PDSA
-# Configuration
-
+repo_url: 'https://github.com/pk1308/PDSA'
 theme:
   name: material
   features:
@@ -28,29 +25,28 @@ theme:
   palette:
     - scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline 
+        icon: material/toggle-switch-off-outline
         name: Switch to dark mode
       primary: teal
-      accent: purple 
-    - scheme: slate 
+      accent: purple
+    - scheme: slate
       toggle:
         icon: material/toggle-switch
-        name: Switch to light mode    
+        name: Switch to light mode
       primary: teal
-      accent: lime    
-  
+      accent: lime
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/pk1308
-    
-
+      link: 'https://github.com/pk1308'
 extra_javascript:
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js #?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
+  - javascripts/config.js
+  - 'https://polyfill.io/v3/polyfill.min.js?features=es6'
+  - 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
 markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - mdx_math
   - attr_list
   - pymdownx.highlight:
       anchor_linenums: true
@@ -64,10 +60,13 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.mark
   - pymdownx.pathconverter
-  
+  - pymdownx.arithmatex:
+      generic: true
+extra_css:
+  - 'https://unpkg.com/katex@0/dist/katex.min.css'
 plugins:
   - search
   - mkdocs-pdf
-
-copyright: |
-  &copy; 2024 <a href="https://github.com/pk1308"  target="_blank" rel="noopener">PK</a>
+copyright: >
+  &copy; 2024 <a href="https://github.com/pk1308"  target="_blank"
+  rel="noopener">PK</a>
