@@ -1,72 +1,75 @@
-site_name: PDSA
-nav:
-  - Home: index.md
-  - reference:
-      - reference/priya_suggestion.md
-  - week1:
-      - week1/exception_handling.md
-      - week1/Euclid's Algorithm.md
-      - week1/class&object.md
-      - week1/time_it.md
-  - week2:
-      - week2/lec2.1.md
-site_author: PK
-site_description: DESCRIPTION
-repo_name: pk1308/PDSA
-repo_url: 'https://github.com/pk1308/PDSA'
-theme:
-  name: material
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - toc.integrate
-    - navigation.top
-  language: en
-  palette:
-    - scheme: default
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-      primary: teal
-      accent: purple
-    - scheme: slate
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
-      primary: teal
-      accent: lime
+copyright: '&copy; 2024 <a href="https://github.com/pk1308"  target="_blank" rel="noopener">PK</a>
+
+  '
 extra:
   social:
-    - icon: fontawesome/brands/github-alt
-      link: 'https://github.com/pk1308'
-extra_javascript:
-  - javascripts/config.js
-  - 'https://polyfill.io/v3/polyfill.min.js?features=es6'
-  - 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
-markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
-  - mdx_math
-  - attr_list
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - admonition
-  - pymdownx.arithmatex:
-      generic: true
-  - footnotes
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.mark
-  - pymdownx.pathconverter
-  - pymdownx.arithmatex:
-      generic: true
+  - icon: fontawesome/brands/github-alt
+    link: https://github.com/pk1308
 extra_css:
-  - 'https://unpkg.com/katex@0/dist/katex.min.css'
+- https://unpkg.com/katex@0/dist/katex.min.css
+extra_javascript:
+- javascripts/config.js
+- https://polyfill.io/v3/polyfill.min.js?features=es6
+- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+markdown_extensions:
+- pymdownx.arithmatex:
+    generic: true
+- mdx_math
+- attr_list
+- pymdownx.highlight:
+    anchor_linenums: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- admonition
+- pymdownx.arithmatex:
+    generic: true
+- footnotes
+- pymdownx.details
+- pymdownx.superfences
+- pymdownx.mark
+- pymdownx.pathconverter
+- pymdownx.arithmatex:
+    generic: true
+nav:
+- Home:
+  - index.md
+- week1:
+  - week1/exception_handling.md
+  - week1/class&object.md
+  - week1/time_it.md
+  - week1/Euclid's Algorithm.md
+- week2:
+  - week2/lec2_3.md
+  - week2/lec2_2.md
+  - week2/lec2.1.md
+- reference:
+  - reference/priya_suggestion.md
 plugins:
-  - search
-  - mkdocs-pdf
-copyright: >
-  &copy; 2024 <a href="https://github.com/pk1308"  target="_blank"
-  rel="noopener">PK</a>
+- search
+- mkdocs-pdf
+repo_name: pk1308/PDSA
+repo_url: https://github.com/pk1308/PDSA
+site_author: PK
+site_description: DESCRIPTION
+site_name: PDSA
+theme:
+  features:
+  - navigation.tabs
+  - navigation.sections
+  - toc.integrate
+  - navigation.top
+  language: en
+  name: material
+  palette:
+  - accent: purple
+    primary: teal
+    scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Switch to dark mode
+  - accent: lime
+    primary: teal
+    scheme: slate
+    toggle:
+      icon: material/toggle-switch
+      name: Switch to light mode
