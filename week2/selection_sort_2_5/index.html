@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../selection_sort_2_5/">
+        <link rel="prev" href="../lec2_4_searchinlist/">
       
       
-        <link rel="next" href="../../reference/priya_suggestion/">
+        <link rel="next" href="../lec2.1/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Lec2.1 - PDSA</title>
+        <title>Selection sort 2 5 - PDSA</title>
       
     
     
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lec2.1
+              Selection sort 2 5
             
           </span>
         </div>
@@ -641,27 +641,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../selection_sort_2_5/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Selection sort 2 5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -676,12 +655,33 @@
         
   
   <span class="md-ellipsis">
-    Lec2.1
+    Selection sort 2 5
   </span>
   
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec2.1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec2.1
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -780,69 +780,95 @@
   
 
 
-  <h1>Lec2.1</h1>
+  <h1>Selection sort 2 5</h1>
 
-<div><p>Sim card vs Aadhar card example</p>
-<ul>
-<li>Naive</li>
-<li>smarter approach</li>
-</ul>
-<p>Main resources of interest</p>
-<ul>
-<li>running time</li>
-<li>space</li>
-</ul>
-<p>Time is depends on the processing power.</p>
-<ul>
-<li>10^6 operation for python</li>
-</ul>
-<p>Storage is limited by available.</p>
-<p>Running time depends on the input size.</p>
-<p>we will be measure time efficiency as a function of input size.</p>
-<ul>
-<li>input size n</li>
-<li>Running Time  t(n)</li>
-</ul>
-<p>$$
-\begin{array}{l}
-data\ avaiable\ of\ Aadhaar\ -\ n\ \approx \ 10^{9}\
--\ Naive\ algorithin\ t( n) \ =\ n^{2}\</p>
-<p>-\ clever\ algo\ t( n) \ \approx \ n\ \log_{2} n
-\end{array}
-$$</p>
-<p>Asymptotyic complexity</p>
-<ul>
-<li>means we will be ingonring the coinstants in the function as we will be looking at large value of n (input value )</li>
-<li>When comparingt(n), focus on orders of magnitudeIgnore constant factors.</li>
-</ul>
-<p><img alt="border" src="../image/lec2.1/1714996778442.png"></p>
-<p>Typically a natural parameter</p>
-<ul>
-<li>side of the list or array - sort / search</li>
-<li>number of objects we want to re arrange</li>
-<li>for graphs we will have two parameter</li>
-<li>vertices</li>
-<li>number of edge</li>
-</ul>
-<p>numeric problem </p>
-<ul>
-<li>magnitude of n is not the correct measure</li>
-<li>Arithmetic operations are performed digit by digitAddition with carry, subtraction with borrow, multiplication, long division .</li>
-</ul>
-<p>Ideally, want the “average” behaviour</p>
-<ul>
-<li>Difficult to compute Average over what?</li>
-<li>Are all inputs equally likely?</li>
-<li>Need a probability distribution over inputs</li>
-</ul>
-<p>Instead, worst case input</p>
-<ul>
-<li>Input that forces algorithm to take longest possible time</li>
-<li>Search for a value that is not present in an unsorted list</li>
-<li>Must scan all elements</li>
-<li>Pessimistic — worst case may be rare</li>
-<li><strong>Upper bound for worst case guarantees good performance.</strong></li>
-</ul></div>
+<div><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">loguru</span> <span class="kn">import</span> <span class="n">logger</span> <span class="k">as</span> <span class="n">lg</span> 
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">import</span> <span class="nn">time</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">class</span> <span class="nc">TimerError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_start_time</span> <span class="o">=</span> <span class="kc">None</span> 
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_stop_time</span> <span class="o">=</span> <span class="kc">None</span> 
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">elapsed_time</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_time</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            <span class="k">raise</span> <span class="n">TimerError</span><span class="p">(</span><span class="s2">" please stop the timer"</span><span class="p">)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_stop_time</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_time</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>            <span class="k">raise</span> <span class="n">TimerError</span><span class="p">(</span><span class="s2">"please start the timer"</span><span class="p">)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_stop_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">elapsed_time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stop_time</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_time</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_start_time</span> <span class="o">=</span> <span class="kc">None</span> 
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="k">def</span> <span class="nf">elapsed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_time</span><span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>            <span class="k">raise</span> <span class="n">TimerError</span><span class="p">(</span><span class="s2">"the counter not running"</span><span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elapsed_time</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        <span class="k">return</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elapsed_time</span><span class="p">))</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="c1"># lg.add(sys.stdout, colorize=True)</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="n">T</span> <span class="o">=</span><span class="n">TimerError</span><span class="p">()</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="n">T</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="n">end_time</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">elapsed</span><span class="p">()</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="n">lg</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"time taken:</span><span class="si">{</span><span class="n">end_time</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[32m2024-05-08 18:59:53.053[0m | [1mINFO    [0m | [36m__main__[0m:[36m&lt;module&gt;[0m:[36m38[0m - [1mtime taken:1.0107993148267269e-05[0m
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">L</span> <span class="o">=</span> <span class="p">[</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000000000</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">SelectionSort</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="k">return</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="c1"># Assume L[:i] is sorted</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="n">mpos</span> <span class="o">=</span> <span class="n">i</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="c1"># mpos: position of minimum in L[i:]</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>            <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">[</span><span class="n">mpos</span><span class="p">]:</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>                <span class="n">mpos</span> <span class="o">=</span> <span class="n">j</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>                <span class="c1"># L[mpos] : smallest value in L[i:]</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>                <span class="c1"># # Exchange L[mpos] and L[i]</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>                <span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">L</span><span class="p">[</span><span class="n">mpos</span><span class="p">])</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">mpos</span><span class="p">],</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>                <span class="c1"># Now L[:i+1] is sorted</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>                <span class="k">return</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</code></pre></div>
+<div class="arithmatex">\[T(n) =  O(N^{2})\]</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">T</span> <span class="o">=</span><span class="n">TimerError</span><span class="p">()</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">T</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">SelectionSort</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">end_time_1</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">elapsed</span><span class="p">()</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">lg</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"time taken:</span><span class="si">{</span><span class="n">end_time_1</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[32m2024-05-08 19:01:03.132[0m | [1mINFO    [0m | [36m__main__[0m:[36m&lt;module&gt;[0m:[36m5[0m - [1mtime taken:2.2412044927477837e-05[0m
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">sort_list</span><span class="p">(</span><span class="n">L</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span class="k">return</span> <span class="p">[]</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">midpoint</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">mid_value</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">midpoint</span><span class="p">]</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">lower_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">low</span> <span class="k">for</span> <span class="n">low</span> <span class="ow">in</span> <span class="n">L</span> <span class="k">if</span> <span class="n">low</span> <span class="o">&lt;</span> <span class="n">mid_value</span><span class="p">]</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">mid_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">mid</span> <span class="k">for</span> <span class="n">mid</span> <span class="ow">in</span> <span class="n">L</span> <span class="k">if</span> <span class="n">mid</span> <span class="o">==</span> <span class="n">mid_value</span><span class="p">]</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">upper_list</span> <span class="o">=</span> <span class="p">[</span> <span class="n">upper</span> <span class="k">for</span>  <span class="n">upper</span> <span class="ow">in</span> <span class="n">L</span> <span class="k">if</span>  <span class="n">upper</span> <span class="o">&gt;</span> <span class="n">mid_value</span><span class="p">]</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="k">return</span> <span class="n">sort_list</span><span class="p">(</span><span class="n">lower_list</span><span class="p">)</span><span class="o">+</span><span class="n">mid_list</span><span class="o">+</span><span class="n">sort_list</span><span class="p">(</span><span class="n">upper_list</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">T</span> <span class="o">=</span><span class="n">TimerError</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">T</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">sort_list</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">end_time_2</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">elapsed</span><span class="p">()</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">lg</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"time taken:</span><span class="si">{</span><span class="n">end_time_2</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[32m2024-05-08 19:01:42.396[0m | [1mINFO    [0m | [36m__main__[0m:[36m&lt;module&gt;[0m:[36m5[0m - [1mtime taken:1.7496046359883621[0m
+</code></pre></div></div>
 
 
 
