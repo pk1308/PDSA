@@ -41,6 +41,8 @@ nav:
 - week2:
   - week2/lec2_3.md
   - week2/lec2_2.md
+  - week2/lec2_4_searchinlist.md
+  - week2/selection_sort_2_5.md
   - week2/lec2.1.md
 - reference:
   - reference/priya_suggestion.md
