@@ -76,7 +76,8 @@ def update_mydocs(folder_path="./docs"):
                 nav_value[key] = [file]
             else:
                 nav_value[key].append(file)
-    yaml_file['nav'] = nav_value
+                
+    yaml_file['nav'] = [{key:value}for key , value in nav_value.items()]
 
     file_path = Path(os.path.join(os.getcwd(), "mkdocs.yml"))
     write_yaml(file_path, yaml_file)
