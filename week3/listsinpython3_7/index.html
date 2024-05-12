@@ -16,7 +16,7 @@
         <link rel="prev" href="../quick_sort_3_1/">
       
       
-        <link rel="next" href="../quicksort_anaylsis_3.2/">
+        <link rel="next" href="../dictionary_3_8/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -539,6 +539,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../dictionary_3_8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dictionary 3 8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../quicksort_anaylsis_3.2/" class="md-nav__link">
         
   
@@ -995,25 +1016,57 @@
   <h1>Listsinpython3 7</h1>
 
 <div><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">sys</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">loguru</span> <span class="kn">import</span> <span class="n">logger</span> 
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">random</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">logger</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">colorize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s2">"&lt;level&gt;</span><span class="si">{level}</span><span class="s2">&lt;/level&gt; | &lt;blue&gt;</span><span class="si">{message}</span><span class="s2">&lt;/blue&gt;"</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kn">import</span> <span class="nn">os</span> 
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kn">from</span> <span class="nn">driver_folder.time_driver</span> <span class="kn">import</span> <span class="n">TimerError</span> 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">import</span> <span class="nn">os</span> 
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kn">from</span> <span class="nn">driver_folder.time_driver</span> <span class="kn">import</span> <span class="n">TimerError</span> 
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">T</span> <span class="o">=</span><span class="n">TimerError</span><span class="p">()</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">T</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">end_time</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">elapsed</span><span class="p">()</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"time taken:</span><span class="si">{</span><span class="n">end_time</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"time taken:</span><span class="si">{</span><span class="n">end_time</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>[1mINFO[0m | [34mtime taken:1.1411000741645694e-05[0m
+<div class="highlight"><pre><span></span><code>time taken:1.2912001693621278e-05
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">zerolist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">zeromatrix</span> <span class="o">=</span><span class="p">[</span><span class="n">zerolist</span><span class="p">,</span> <span class="n">zerolist</span><span class="p">,</span> <span class="n">zerolist</span><span class="p">]</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">zeromatrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> 
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">zeromatrix</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[[0, 1, 0], [0, 1, 0], [0, 1, 0]]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">zerolist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">zeromatrix</span> <span class="o">=</span><span class="p">[</span><span class="n">zerolist</span><span class="p">,</span> <span class="n">zerolist</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">zerolist</span><span class="p">]</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">zeromatrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> 
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">zeromatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">zeromatrix</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[[0, 2, 0], [0, 1, 0], [0, 2, 0]]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">zeromatrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">zeromatrix</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>array([[0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.]])
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>array([0, 1, 2, 3, 4])
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>
 </code></pre></div></div>
 
 
