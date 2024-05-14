@@ -34,7 +34,11 @@ nav:
 - Home:
   - index.md
 - week3:
+  - week3/list_implementation_3_6.md
   - week3/quick_sort_3_1.md
+  - week3/listsinpython3_7.md
+  - week3/quicksort_anaylsis_3.2.md
+  - week3/list&dictionary_imp_3_9.md
 - week1:
   - week1/exception_handling.md
   - week1/class&object.md

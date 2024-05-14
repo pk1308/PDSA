@@ -42,7 +42,7 @@ convert_to_markdown() {
 
 # Function to update documents and deploy
 update_and_deploy() {
-    local python_script="driver/update_mydocs.py"
+    local python_script="driver_folder/update_mydocs.py"
     local mkdocs_command="mkdocs gh-deploy"
 
     echo "Running Python script to update documents..."
