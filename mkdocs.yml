@@ -53,6 +53,14 @@ nav:
   - week2/lec2_4_searchinlist.md
   - week2/selection_sort_2_5.md
   - week2/lec2.1.md
+- week4:
+  - week4/DFS_4_4.md
+  - week4/Lecture 4.4 - Depth First Search (DFS).md
+  - week4/BFS_4_3.md
+  - week4/Lecture 4.3 - Breadth First Search (BFS).md
+  - week4/Lecture 4.2 - Representing Graphs.md
+  - week4/Lecture 4.1 - Introduction to graphs_annotated.md
+  - week4/represntinggraph4.2.md
 - reference:
   - reference/priya_suggestion.md
 plugins:

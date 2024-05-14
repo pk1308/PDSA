@@ -75,7 +75,6 @@ main() {
     local folder_path="./docs"
     check_directory "$folder_path"
     convert_to_markdown "$folder_path"
-    update_and_deploy
 }
 
 # Entry point
