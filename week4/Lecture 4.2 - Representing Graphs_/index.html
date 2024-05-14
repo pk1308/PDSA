@@ -13,10 +13,6 @@
       
       
       
-        <link rel="prev" href="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29/">
-      
-      
-        <link rel="next" href="../Lecture%204.1%20-%20Introduction%20to%20graphs_annotated/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Lecture 4.2 - Representing Graphs.pdf (PDF file) - PDSA</title>
+        <title>Lecture 4.2 - Representing Graphs_.pdf (PDF file) - PDSA</title>
       
     
     
@@ -78,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-42-representing-graphspdf-pdf-file" class="md-skip">
+        <a href="#lecture-42-representing-graphs_pdf-pdf-file" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 4.2 - Representing Graphs.pdf (PDF file)
+              Lecture 4.2 - Representing Graphs_.pdf (PDF file)
             
           </span>
         </div>
@@ -289,12 +285,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../DFS_4_4/" class="md-tabs__link">
           
   
@@ -941,30 +935,25 @@
       
   
   
-    
   
   
-  
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -975,7 +964,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             week4
@@ -1010,11 +999,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29/" class="md-nav__link">
+      <a href="../Lecture 4.4 - Depth First Search (DFS).md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 4.4 - Depth First Search (DFS).pdf (PDF file)
+    None
   </span>
   
 
@@ -1052,11 +1041,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29/" class="md-nav__link">
+      <a href="../Lecture 4.3 - Breadth First Search (BFS).md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 4.3 - Breadth First Search (BFS).pdf (PDF file)
+    None
   </span>
   
 
@@ -1070,28 +1059,18 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Lecture 4.2 - Representing Graphs.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 4.2 - Representing Graphs.pdf (PDF file)
+    None
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -1108,7 +1087,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 4.1 - Introduction to graphs_annotated.pdf (PDF file)
+    Lecture 4.1   Introduction to graphs annotated
   </span>
   
 
@@ -1232,37 +1211,37 @@
   
 
 
-<div><h1 id="lecture-42-representing-graphspdf-pdf-file">Lecture 4.2 - Representing Graphs.pdf (PDF file)</h1>
+<div><h1 id="lecture-42-representing-graphs_pdf-pdf-file">Lecture 4.2 - Representing Graphs_.pdf (PDF file)</h1>
 <p><strong>Summary</strong>
 <strong>Graph Representation</strong></p>
-<p>Graphs can be represented using two common data structures:</p>
-<p><strong>Adjacency Matrix:</strong></p>
 <ul>
-<li>A table where each cell (i, j) represents the existence (1) or absence (0) of an edge between vertices i and j.</li>
-<li>Suitable for dense graphs (many edges) as it stores information for all possible pairs of vertices.</li>
-<li>Efficient for checking if two vertices are connected.</li>
+<li>Graphs represent relationships between objects (vertices) and connections between them (edges).</li>
+<li>The adjacency matrix method represents graphs using a table where each row and column corresponds to a vertex.</li>
+<li>The adjacency list method stores vertices in a list, with each vertex having a list of its edges to other vertices.</li>
 </ul>
-<p><strong>Adjacency List:</strong></p>
+<p><strong>Representing Graphs for Computing</strong></p>
 <ul>
-<li>A dictionary where each key is a vertex, and the associated value is a list of adjacent vertices.</li>
-<li>Suitable for sparse graphs (few edges) as it only stores information for existing edges.</li>
-<li>Efficient for iterating through the neighbors of a vertex.</li>
+<li>Adjacency lists are more space-efficient than adjacency matrices.</li>
+<li>Adjacency lists are more efficient for determining whether one vertex is a neighbor of another.</li>
+<li>Adjacency matrices are more efficient for identifying all the neighbors of a vertex.</li>
 </ul>
-<p><strong>Choosing the Right Representation:</strong></p>
-<p>The choice of representation depends on the graph structure and the operations to be performed:</p>
+<p><strong>Checking Reachability</strong></p>
 <ul>
-<li>Adjacency matrix uses more space but is faster for checking connectivity.</li>
-<li>Adjacency list uses less space but requires more computation to check connectivity.</li>
+<li>To check if one vertex is reachable from another, we can:<ul>
+<li>Mark the target vertex as reachable.</li>
+<li>Mark all neighbors of reachable vertices as reachable.</li>
+<li>Repeat until the target vertex is marked or the entire graph has been explored.</li>
 </ul>
-<p><strong>Reachability Checking:</strong></p>
+</li>
+</ul>
+<p><strong>Breadth-First Search vs. Depth-First Search</strong></p>
 <ul>
-<li>To determine if a vertex (target) is reachable from another vertex (source), systematically mark and propagate the mark to all reachable vertices.</li>
-<li>Depth-first search (DFS) or breadth-first search (BFS) algorithms can be used for this purpose.</li>
-<li>DFS explores paths until they die out and backtracks, while BFS propagates marks in "layers."
+<li>Breadth-first search explores all vertices at a given depth before moving on to the next depth.</li>
+<li>Depth-first search explores a single path as far as possible before backtracking and trying another path.
 <strong>Lec file</strong></li>
 </ul>
-<h1 id="lecture-42-representing-graphspdf-pdf-file_1">Lecture 4.2 - Representing Graphs.pdf (PDF file)</h1>
-<p><embed alt="Alt text" src="../Lecture%204.2%20-%20Representing%20Graphs.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
+<h1 id="lecture-42-representing-graphs_pdf-pdf-file_1">Lecture 4.2 - Representing Graphs_.pdf (PDF file)</h1>
+<p><embed alt="Alt text" src="../Lecture%204.2%20-%20Representing%20Graphs_.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
 
 
 

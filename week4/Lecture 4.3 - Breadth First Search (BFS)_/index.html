@@ -13,10 +13,6 @@
       
       
       
-        <link rel="prev" href="../DFS_4_4/">
-      
-      
-        <link rel="next" href="../BFS_4_3/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Lecture 4.4 - Depth First Search (DFS).pdf (PDF file) - PDSA</title>
+        <title>Lecture 4.3 - Breadth First Search (BFS)_.pdf (PDF file) - PDSA</title>
       
     
     
@@ -78,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-44-depth-first-search-dfspdf-pdf-file" class="md-skip">
+        <a href="#lecture-43-breadth-first-search-bfs_pdf-pdf-file" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 4.4 - Depth First Search (DFS).pdf (PDF file)
+              Lecture 4.3 - Breadth First Search (BFS)_.pdf (PDF file)
             
           </span>
         </div>
@@ -289,12 +285,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../DFS_4_4/" class="md-tabs__link">
           
   
@@ -941,30 +935,25 @@
       
   
   
-    
   
   
-  
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -975,7 +964,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             week4
@@ -1007,28 +996,18 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Lecture 4.4 - Depth First Search (DFS).md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 4.4 - Depth First Search (DFS).pdf (PDF file)
+    None
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -1062,11 +1041,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29/" class="md-nav__link">
+      <a href="../Lecture 4.3 - Breadth First Search (BFS).md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 4.3 - Breadth First Search (BFS).pdf (PDF file)
+    None
   </span>
   
 
@@ -1083,11 +1062,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%204.2%20-%20Representing%20Graphs/" class="md-nav__link">
+      <a href="../Lecture 4.2 - Representing Graphs.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 4.2 - Representing Graphs.pdf (PDF file)
+    None
   </span>
   
 
@@ -1108,7 +1087,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 4.1 - Introduction to graphs_annotated.pdf (PDF file)
+    Lecture 4.1   Introduction to graphs annotated
   </span>
   
 
@@ -1232,15 +1211,22 @@
   
 
 
-<div><h1 id="lecture-44-depth-first-search-dfspdf-pdf-file">Lecture 4.4 - Depth First Search (DFS).pdf (PDF file)</h1>
+<div><h1 id="lecture-43-breadth-first-search-bfs_pdf-pdf-file">Lecture 4.3 - Breadth First Search (BFS)_.pdf (PDF file)</h1>
 <p><strong>Summary</strong>
-Depth First Search (DFS) is a graph traversal algorithm that explores the graph in a depth-first manner. It starts at a vertex, visits all of its unvisited neighbors, and then recurses to explore each of those neighbors' unvisited neighbors. This process continues until all vertices have been visited.</p>
-<p>DFS uses a stack to keep track of the vertices that have been visited but not yet explored. When a vertex is visited, it is pushed onto the stack. When all of the vertex's neighbors have been explored, it is popped off the stack.</p>
-<p>DFS is useful for finding paths through graphs, and it can also be used to find connected components in a graph.</p>
-<p>The complexity of DFS is O(n + m), where n is the number of vertices in the graph and m is the number of edges.
+<strong>Summary of Breadth First Search (BFS):</strong></p>
+<p>BFS is a systematic technique for exploring a graph level by level. It involves:
+- Marking visited vertices
+- Maintaining a queue of explored but unvisited vertices
+- Complexity: O(n²) using an adjacency matrix or O(m + n) using an adjacency list</p>
+<p><strong>Enhancing BFS:</strong>
+- Maintain parent information to recover the path to reachable vertices.
+- Record distance (levels) to identify the shortest path in terms of edge count.</p>
+<p><strong>Generalizations:</strong>
+- Edges can have weights (costs).
+- In weighted graphs, shortest paths are determined by cost, not edge count.
 <strong>Lec file</strong></p>
-<h1 id="lecture-44-depth-first-search-dfspdf-pdf-file_1">Lecture 4.4 - Depth First Search (DFS).pdf (PDF file)</h1>
-<p><embed alt="Alt text" src="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
+<h1 id="lecture-43-breadth-first-search-bfs_pdf-pdf-file_1">Lecture 4.3 - Breadth First Search (BFS)_.pdf (PDF file)</h1>
+<p><embed alt="Alt text" src="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29_.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
 
 
 

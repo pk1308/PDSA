@@ -13,10 +13,6 @@
       
       
       
-        <link rel="prev" href="../BFS_4_3/">
-      
-      
-        <link rel="next" href="../Lecture%204.2%20-%20Representing%20Graphs/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Lecture 4.3 - Breadth First Search (BFS).pdf (PDF file) - PDSA</title>
+        <title>Lecture 4.8 - Longest Path in DAGs.pdf (PDF file) - PDSA</title>
       
     
     
@@ -78,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-43-breadth-first-search-bfspdf-pdf-file" class="md-skip">
+        <a href="#lecture-48-longest-path-in-dagspdf-pdf-file" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 4.3 - Breadth First Search (BFS).pdf (PDF file)
+              Lecture 4.8 - Longest Path in DAGs.pdf (PDF file)
             
           </span>
         </div>
@@ -289,12 +285,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../DFS_4_4/" class="md-tabs__link">
           
   
@@ -941,30 +935,25 @@
       
   
   
-    
   
   
-  
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -975,7 +964,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             week4
@@ -1010,11 +999,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29/" class="md-nav__link">
+      <a href="../Lecture 4.4 - Depth First Search (DFS).md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 4.4 - Depth First Search (DFS).pdf (PDF file)
+    None
   </span>
   
 
@@ -1049,28 +1038,18 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Lecture 4.3 - Breadth First Search (BFS).md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 4.3 - Breadth First Search (BFS).pdf (PDF file)
+    None
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -1083,11 +1062,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%204.2%20-%20Representing%20Graphs/" class="md-nav__link">
+      <a href="../Lecture 4.2 - Representing Graphs.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 4.2 - Representing Graphs.pdf (PDF file)
+    None
   </span>
   
 
@@ -1108,7 +1087,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 4.1 - Introduction to graphs_annotated.pdf (PDF file)
+    Lecture 4.1   Introduction to graphs annotated
   </span>
   
 
@@ -1232,46 +1211,12 @@
   
 
 
-<div><h1 id="lecture-43-breadth-first-search-bfspdf-pdf-file">Lecture 4.3 - Breadth First Search (BFS).pdf (PDF file)</h1>
+<div><h1 id="lecture-48-longest-path-in-dagspdf-pdf-file">Lecture 4.8 - Longest Path in DAGs.pdf (PDF file)</h1>
 <p><strong>Summary</strong>
-Breadth First Search (BFS) is an algorithm used to traverse and search a graph or tree data structure. It starts at a specified starting node and explores all reachable nodes, level by level, before moving on.</p>
-<p>Here's a summary of the BFS algorithm:</p>
-<ol>
-<li>
-<p><strong>Initialization:</strong></p>
-<ul>
-<li>Mark the starting node as visited.</li>
-<li>Create a queue and add the starting node to it.</li>
-</ul>
-</li>
-<li>
-<p><strong>Exploration:</strong></p>
-<ul>
-<li>While the queue is not empty:<ul>
-<li>Remove the first node from the queue.</li>
-<li>Visit the node and perform any necessary operations.</li>
-<li>Add all unvisited neighbors of the node to the queue.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Termination:</strong></p>
-<ul>
-<li>The algorithm continues until the queue is empty, indicating that all reachable nodes have been visited.</li>
-</ul>
-</li>
-</ol>
-<p>BFS has several key characteristics:</p>
-<ul>
-<li><strong>Level-by-level exploration:</strong> BFS explores nodes level by level, starting with the starting node and moving outward.</li>
-<li><strong>Queue-based:</strong> It uses a queue to keep track of nodes that have been visited but not yet explored.</li>
-<li><strong>Complexity:</strong> The time complexity of BFS is typically O(n+m), where n is the number of nodes and m is the number of edges in the graph.</li>
-</ul>
-<p>BFS can be used to solve a variety of graph-related problems, including finding the shortest path between two nodes, detecting cycles, and checking for connectivity.
+Directed Acyclic Graphs (DAGs) are graphs without directed cycles. Topological sorting provides a feasible schedule by enumerating vertices from the graph with no incoming edges to vertices with the highest number of incoming edges. The longest path in a DAG can be found by iterating through the vertices in topological order and checking if there is a longer path to each vertex from its incoming neighbors. The longest path problem in general graphs, however, is more difficult, and the best-known strategy involves enumerating all possible paths.
 <strong>Lec file</strong></p>
-<h1 id="lecture-43-breadth-first-search-bfspdf-pdf-file_1">Lecture 4.3 - Breadth First Search (BFS).pdf (PDF file)</h1>
-<p><embed alt="Alt text" src="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
+<h1 id="lecture-48-longest-path-in-dagspdf-pdf-file_1">Lecture 4.8 - Longest Path in DAGs.pdf (PDF file)</h1>
+<p><embed alt="Alt text" src="../Lecture%204.8%20-%20Longest%20Path%20in%20DAGs.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
 
 
 
