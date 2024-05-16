@@ -14,7 +14,7 @@ end_time = T.elapsed()
 print(f"time taken:{end_time}")
 ```
 
-    time taken:3.589600237319246e-05
+    time taken:1.6460999177070335e-05
 
 
 

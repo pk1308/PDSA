@@ -54,13 +54,21 @@ nav:
   - week2/selection_sort_2_5.md
   - week2/lec2.1.md
 - week4:
+  - week4/pending.md
   - week4/DFS_4_4.md
-  - week4/Lecture 4.4 - Depth First Search (DFS).md
+  - week4/Lecture 4.3 - Breadth First Search (BFS)_.md
   - week4/BFS_4_3.md
-  - week4/Lecture 4.3 - Breadth First Search (BFS).md
-  - week4/Lecture 4.2 - Representing Graphs.md
   - week4/Lecture 4.1 - Introduction to graphs_annotated.md
+  - week4/Lecture 4.7 - Topological Sorting.md
+  - week4/Lecture 4.5 - Applications of BFS and DFS.md
+  - week4/Lecture 4.1 - Introduction to graphs_.md
+  - week4/Lecture 4.4 - Depth First Search (DFS)_T.md
+  - week4/Lecture 4.3 - Breadth First Search (BFS)_T.md
+  - week4/Lecture 4.2 - Representing Graphs_.md
   - week4/represntinggraph4.2.md
+  - week4/Lecture 4.8 - Longest Path in DAGs.md
+  - week4/Lecture 4.6 - Introduction to Directed Acyclic Graph (DAG).md
+  - week4/Lecture 4.4 - Depth First Search (DFS)_.md
 - reference:
   - reference/priya_suggestion.md
 plugins:

@@ -42,12 +42,13 @@ def load_pdf_from_file(file_path):
     """
     # Create an instance of PyPDFium2Loader with the file path
     loader = PyPDFium2Loader(file_path)
-    
+
     # Load the PDF document using the loader
     pdf_document = loader.load()
-    
+
     # Return the loaded PDF document
     return pdf_document
+
 
 def get_git_status_files(repo_path_to_update):
     """
@@ -92,7 +93,7 @@ def read_yaml_as_dict(path_to_yaml: Path):
         ConfigBox: ConfigBox type
     """
     try:
-        with open(path_to_yaml , encoding="utf-8") as yaml_file:
+        with open(path_to_yaml, encoding="utf-8") as yaml_file:
             content = yaml.safe_load(yaml_file)
             logger.info(f"yaml file: {path_to_yaml} loaded successfully")
             return content
@@ -115,7 +116,7 @@ def write_yaml(file_path: Path, data: dict = None):
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "w", encoding="utf-8") as yaml_file:
             if data is not None:
-                 yaml.dump(data, yaml_file , default_flow_style=False, sort_keys=False)
+                yaml.dump(data, yaml_file, default_flow_style=False, sort_keys=False)
     except Exception as e:
         raise e
 
@@ -128,7 +129,7 @@ def update_my_docs(folder_path="./docs"):
     """
     yaml_file = read_yaml_as_dict(Path("mkdocs.yml"))
     markdown_files = []
-    for root, _ , files_to_check in os.walk(folder_path):
+    for root, _, files_to_check in os.walk(folder_path):
         for filename in files_to_check:
             if filename.endswith(".md"):
                 full_path = os.path.join(root, filename)
@@ -153,11 +154,11 @@ def update_my_docs(folder_path="./docs"):
     write_yaml(file_path, yaml_file)
 
 
-
-def summarize(file_path , context_base = "summarize the following text" ):
+def summarize(file_path, context_base="summarize the following text"):
     """_summary_
 
     Args:
+        context_base:
         file_path (_type_): _description_
 
     Returns:
@@ -170,6 +171,8 @@ def summarize(file_path , context_base = "summarize the following text" ):
     result = llm.invoke(f"{context_base}: \n {pages}:")
 
     return result.content
+
+
 def create_md(files_to_create):
     """
   This function attempts to create Markdown files with information about 
@@ -197,7 +200,7 @@ def create_md(files_to_create):
                     f.write(f"# {os.path.basename(file_to)} (PDF file)\n")
                     path_ = os.path.basename(file_to)
                     time.sleep(60)
-                    
+
                     data = f"![Alt text](<./{path_}>)" + '{ type=application/pdf style="min-height:100vh;width:100%" }'
                     f.write(data)
 

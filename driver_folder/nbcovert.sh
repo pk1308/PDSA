@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Bash script to convert modified and untracked Jupyter notebook files to markdown.
+
 # Function to check if a directory exists
 check_directory() {
     local folder_path="$1"
@@ -9,24 +11,40 @@ check_directory() {
     fi
 }
 
-# Function to convert notebook files to markdown
+# Function to convert modified and untracked notebook files to markdown
 convert_to_markdown() {
     local folder_path="$1"
     local notebook_files=()
+
+    # Find modified .ipynb files using git status
     while IFS= read -r -d '' file; do
         # Get the relative path excluding the base directory
         relative_path=$(realpath --relative-to="$folder_path" "$file" 2>/dev/null)
-        # Check if realpath succeeded (exit code 0)
-        if [ $? -eq 0 ]; then
+        if [ -n "$relative_path" ]; then
             notebook_files+=("$relative_path")
         else
             echo "Error: realpath failed for '$file'."
         fi
-    done < <(find "$folder_path" -type f -name "*.ipynb" -print0)
+    done < <(git status --porcelain | grep -E "^\s*M.*\.ipynb$" | sed -E 's/^\s*M\s*//' | \
+             find "$folder_path" -type f -name "*.ipynb" -print0)
+
+    # Find untracked .ipynb files using git ls-files
+    while IFS= read -r -d '' file; do
+        # Get the relative path excluding the base directory
+        relative_path=$(realpath --relative-to="$folder_path" "$file" 2>/dev/null)
+        if [ -n "$relative_path" ]; then
+            notebook_files+=("$relative_path")
+        else
+            echo "Error: realpath failed for '$file'."
+        fi
+    done < <(git ls-files --others --exclude-standard -- "*.ipynb")
+
+    # Remove duplicates
+    readarray -t notebook_files < <(printf "%s\n" "${notebook_files[@]}" | sort -u)
 
     # Check if any notebook files were found
     if [ ${#notebook_files[@]} -gt 0 ]; then
-        echo "Found notebook files:"
+        echo "Found modified and untracked notebook files:"
         for file in "${notebook_files[@]}"; do
             echo "Converting '$file' to markdown..."
             if jupyter nbconvert --to markdown "$folder_path/$file"; then
@@ -36,46 +54,16 @@ convert_to_markdown() {
             fi
         done
     else
-        echo "No notebook files found in '$folder_path'."
+        echo "No modified or untracked notebook files found in '$folder_path'."
     fi
-}
-
-# Function to update documents and deploy
-update_and_deploy() {
-    local python_script="driver_folder/update_mydocs.py"
-    local mkdocs_command="mkdocs gh-deploy"
-
-    echo "Running Python script to update documents..."
-    if run python3 "$python_script"; then
-        echo "Python script executed successfully."
-        echo "Deploying updated documents with mkdocs..."
-        if run $mkdocs_command; then
-            echo "Deployment successful."
-        else
-            echo "Failed to deploy documents with mkdocs."
-        fi
-    else
-        echo "Failed to execute Python script."
-    fi
-}
-
-# Function to execute commands and handle errors
-run() {
-    "$@"
-    local status=$?
-    if [ $status -ne 0 ]; then
-        echo "Error: Command '$*' failed with status $status."
-        exit $status
-    fi
-    return $status
 }
 
 # Main function
 main() {
-    local folder_path="./docs"
+    local folder_path="${1:-./docs}"
     check_directory "$folder_path"
     convert_to_markdown "$folder_path"
 }
 
 # Entry point
-main
+main "$@"

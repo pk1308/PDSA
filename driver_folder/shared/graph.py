@@ -80,7 +80,7 @@ def plot_graph_from_adj_list(adj_list):
                         yaxis=dict(showgrid=False, zeroline=False)))
     
     # Display the plot
-    fig.show()
+    return fig 
     
 if __name__ == "__main__":
     

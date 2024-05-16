@@ -2,12 +2,10 @@ import os
 import subprocess
 import sys
 from loguru import logger
-from shared.functions import get_git_status_files , create_md , update_my_docs , deploy_mkdocs
+from shared.functions import get_git_status_files, create_md, update_my_docs, deploy_mkdocs
 
 logger.remove()
 logger.add(sys.stdout, colorize=True, format="{time} | {level} | {message}")
-
-
 
 if __name__ == "__main__":
 
