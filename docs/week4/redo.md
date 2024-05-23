@@ -94,8 +94,6 @@ display(Image(filename="graph_image.png"))
     
 
 
-
-
 # BFS using Adjacency Matrix
 
 
@@ -242,6 +240,116 @@ print("Parent nodes:", PARENT)
 
     Visited nodes: {0: True, 1: True, 2: True, 3: True, 4: True, 5: True, 6: True, 7: True, 8: True, 9: True}
     Parent nodes: {0: -1, 1: 0, 2: 4, 3: 1, 4: 5, 5: 3, 6: 3, 7: 5, 8: 7, 9: 4}
+
+
+
+```python
+#Application Of BFS and DFS
+```
+
+
+```python
+def Components(AList):
+    component = {}
+    for row in AList.keys():
+        component[row] = -1 
+    comp_id , seen = 0,0 
+    while seen <= max(AList.keys()):
+        start_vertex_depth = min([i for i in AList.keys() if component[i] == -1])
+        visited , _ = BFSListPath(AList, start_vertex_depth)
+        for node in visited.keys():
+            if visited[node]:
+                seen += 1
+                component[node] = comp_id
+        comp_id += 1
+        
+    return component
+        
+```
+
+
+```python
+def Components(AList):
+    component = {}
+    for i in AList.keys():
+        component[i] = -1
+    (compid,seen) = (0,0)
+    while seen <= max(AList.keys()):
+        startv = min([i for i in AList.keys()
+                      if component[i] == -1])
+        visited , _ = BFSListPath(AList,startv)
+        for i in visited.keys():
+            if visited[i]:
+                seen = seen + 1
+                component[i] = compid
+        compid = compid + 1
+    return(component)
+```
+
+
+```python
+Components(AList)
+```
+
+
+
+
+    {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
+
+
+
+
+```python
+Amat = np.array([
+[0,1,1,0,0,0,0,0,0,0,0],
+    [1,0,1,0,0,0,0,0,0,0,0], 
+    [1,1,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,1,0,0,0,0,0 ,0],
+    [0,0,0,1,0,1,0,0,0,0,0],
+    [0,0,0,0,1,0,1,0,0,0,0],
+    [0,0,0,0,0,1,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,1,1,1],
+    [0,0,0,0,0,0,0,1,0,0,0],
+    [0,0,0,0,0,0,0,1,0,0,0],
+    [0,0,0,0,0,0,0,1,0,0,0]])
+
+```
+
+
+```python
+adj_list = adj_matrix_to_list(Amat)
+```
+
+
+```python
+fig = plot_graph_from_adj_list(adj_list)
+```
+
+
+```python
+# Save the graph as an image
+fig.write_image("graph_image1.png")
+
+# Display the plot
+display(Image(filename="graph_image1.png"))
+```
+
+
+    
+![png](redo_files/redo_26_0.png)
+    
+
+
+
+```python
+Components(adj_list)
+```
+
+
+
+
+    {0: 0, 1: 0, 2: 0, 3: 1, 4: 1, 5: 1, 6: 1, 7: 2, 8: 2, 9: 2, 10: 2}
+
 
 
 

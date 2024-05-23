@@ -1,35 +1,8 @@
-copyright: '&copy; 2024 <a href="https://github.com/pk1308"  target="_blank" rel="noopener">PK</a>
-
-  '
-extra:
-  social:
-  - icon: fontawesome/brands/github-alt
-    link: https://github.com/pk1308
-extra_css:
-- https://unpkg.com/katex@0/dist/katex.min.css
-extra_javascript:
-- javascripts/config.js
-- https://polyfill.io/v3/polyfill.min.js?features=es6
-- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-markdown_extensions:
-- pymdownx.arithmatex:
-    generic: true
-- mdx_math
-- attr_list
-- pymdownx.highlight:
-    anchor_linenums: true
-- pymdownx.inlinehilite
-- pymdownx.snippets
-- admonition
-- pymdownx.arithmatex:
-    generic: true
-- footnotes
-- pymdownx.details
-- pymdownx.superfences
-- pymdownx.mark
-- pymdownx.pathconverter
-- pymdownx.arithmatex:
-    generic: true
+site_name: PDSA
+site_author: PK
+site_description: DESCRIPTION
+repo_name: pk1308/PDSA
+repo_url: https://github.com/pk1308/PDSA
 nav:
 - Home:
   - index.md
@@ -55,10 +28,13 @@ nav:
   - week2/lec2.1.md
 - week4:
   - week4/pending.md
+  - week4/topologoical_sorting.md
   - week4/DFS_4_4.md
   - week4/Lecture 4.3 - Breadth First Search (BFS)_.md
   - week4/BFS_4_3.md
   - week4/Lecture 4.1 - Introduction to graphs_annotated.md
+  - week4/longest_path4_8.md
+  - week4/redo.md
   - week4/Lecture 4.7 - Topological Sorting.md
   - week4/Lecture 4.5 - Applications of BFS and DFS.md
   - week4/Lecture 4.1 - Introduction to graphs_.md
@@ -71,32 +47,57 @@ nav:
   - week4/Lecture 4.4 - Depth First Search (DFS)_.md
 - reference:
   - reference/priya_suggestion.md
-plugins:
-- search
-- mkdocs-pdf
-repo_name: pk1308/PDSA
-repo_url: https://github.com/pk1308/PDSA
-site_author: PK
-site_description: DESCRIPTION
-site_name: PDSA
 theme:
+  name: material
   features:
   - navigation.tabs
   - navigation.sections
   - toc.integrate
   - navigation.top
   language: en
-  name: material
   palette:
-  - accent: purple
-    primary: teal
-    scheme: default
+  - scheme: default
     toggle:
       icon: material/toggle-switch-off-outline
       name: Switch to dark mode
-  - accent: lime
     primary: teal
-    scheme: slate
+    accent: purple
+  - scheme: slate
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
+    primary: teal
+    accent: lime
+extra:
+  social:
+  - icon: fontawesome/brands/github-alt
+    link: https://github.com/pk1308
+extra_javascript:
+- javascripts/config.js
+- https://polyfill.io/v3/polyfill.min.js?features=es6
+- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+markdown_extensions:
+- pymdownx.arithmatex:
+    generic: true
+- mdx_math
+- attr_list
+- pymdownx.highlight:
+    anchor_linenums: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- admonition
+- pymdownx.arithmatex:
+    generic: true
+- footnotes
+- pymdownx.details
+- pymdownx.superfences
+- pymdownx.mark
+- pymdownx.pathconverter
+- pymdownx.arithmatex:
+    generic: true
+extra_css:
+- https://unpkg.com/katex@0/dist/katex.min.css
+plugins:
+- search
+- mkdocs-pdf
+copyright: '&copy; 2024 <a href="https://github.com/pk1308"  target="_blank" rel="noopener">PK</a>'
