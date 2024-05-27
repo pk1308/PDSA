@@ -12,6 +12,10 @@ nav:
   - week3/listsinpython3_7.md
   - week3/quicksort_anaylsis_3.2.md
   - week3/list&dictionary_imp_3_9.md
+- week5:
+  - week5/dijkstra_5_2.md
+  - week5/Lecture 4.2 - Representing Graphs.md
+  - week5/Lecture 5.1 - Shortest Paths in Weighted Graphs_annotated.md
 - week1:
   - week1/exception_handling.md
   - week1/class&object.md
@@ -19,10 +23,12 @@ nav:
   - week1/Euclid's Algorithm.md
 - week2:
   - week2/lec2_3.md
+  - week2/lec_summary.md
   - week2/week summary.md
   - week2/lec2_2.md
   - week2/insert_sort_2_6.md
   - week2/mergesort2_7.md
+  - week2/master theorm.md
   - week2/lec2_4_searchinlist.md
   - week2/selection_sort_2_5.md
   - week2/lec2.1.md

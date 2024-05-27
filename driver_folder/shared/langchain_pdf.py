@@ -1,7 +1,7 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from shared.functions import  load_pdf_from_file
 
-def summarize(file_path , context_base = "summarize the following text not less that 1000" ):
+def summarize(file_path , context_base = "explain in detail the concept in the following text" ):
     """_summary_
 
     Args:
