@@ -14,7 +14,7 @@ nav:
   - week3/list&dictionary_imp_3_9.md
 - week5:
   - week5/dijkstra_5_2.md
-  - week5/Lecture 4.2 - Representing Graphs.md
+  - week5/Lecture 5.2 - Single Source Shortest Paths (Dijkstra_s algorithm).md
   - week5/Lecture 5.1 - Shortest Paths in Weighted Graphs_annotated.md
 - week1:
   - week1/exception_handling.md
