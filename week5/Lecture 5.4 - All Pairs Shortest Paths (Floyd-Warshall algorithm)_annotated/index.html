@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../Lecture%205.4%20-%20All%20Pairs%20Shortest%20Paths%20%28Floyd-Warshall%20algorithm%29_annotated/">
+        <link rel="prev" href="../Lecture%205.1%20-%20Shortest%20Paths%20in%20Weighted%20Graphs_annotated/">
       
       
-        <link rel="next" href="../floyd_warshall_5_4/">
+        <link rel="next" href="../Lecture%205.3%20-%20Single%20Source%20Shortest%20Paths%20with%20Negative%20Weights%20%28Bellman-Ford%20Algorithm%29_annotated/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Lecture 5.3 - Single Source Shortest Paths with Negative Weights (Bellman-Ford Algorithm)_annotated.pdf (PDF file) - PDSA</title>
+        <title>Lecture 5.4 - All Pairs Shortest Paths (Floyd-Warshall algorithm)_annotated.pdf (PDF file) - PDSA</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-53-single-source-shortest-paths-with-negative-weights-bellman-ford-algorithm_annotatedpdf-pdf-file" class="md-skip">
+        <a href="#lecture-54-all-pairs-shortest-paths-floyd-warshall-algorithm_annotatedpdf-pdf-file" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 5.3 - Single Source Shortest Paths with Negative Weights (Bellman-Ford Algorithm)_annotated.pdf (PDF file)
+              Lecture 5.4 - All Pairs Shortest Paths (Floyd-Warshall algorithm)_annotated.pdf (PDF file)
             
           </span>
         </div>
@@ -742,27 +742,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%205.4%20-%20All%20Pairs%20Shortest%20Paths%20%28Floyd-Warshall%20algorithm%29_annotated/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 5.4 - All Pairs Shortest Paths (Floyd-Warshall algorithm)_annotated.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -779,12 +758,33 @@
         
   
   <span class="md-ellipsis">
-    Lecture 5.3 - Single Source Shortest Paths with Negative Weights (Bellman-Ford Algorithm)_annotated.pdf (PDF file)
+    Lecture 5.4 - All Pairs Shortest Paths (Floyd-Warshall algorithm)_annotated.pdf (PDF file)
   </span>
   
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture%205.3%20-%20Single%20Source%20Shortest%20Paths%20with%20Negative%20Weights%20%28Bellman-Ford%20Algorithm%29_annotated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 5.3 - Single Source Shortest Paths with Negative Weights (Bellman-Ford Algorithm)_annotated.pdf (PDF file)
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1717,14 +1717,17 @@
   
 
 
-<div><h1 id="lecture-53-single-source-shortest-paths-with-negative-weights-bellman-ford-algorithm_annotatedpdf-pdf-file">Lecture 5.3 - Single Source Shortest Paths with Negative Weights (Bellman-Ford Algorithm)_annotated.pdf (PDF file)</h1>
+<div><h1 id="lecture-54-all-pairs-shortest-paths-floyd-warshall-algorithm_annotatedpdf-pdf-file">Lecture 5.4 - All Pairs Shortest Paths (Floyd-Warshall algorithm)_annotated.pdf (PDF file)</h1>
 <p><strong>Summary</strong>
-The Bellman-Ford algorithm is used to find the shortest paths from a single source vertex to all other vertices in a weighted graph that may contain negative edge weights. Unlike Dijkstra's algorithm, which assumes non-negative edge weights, the Bellman-Ford algorithm allows for negative weights.</p>
-<p>Initially, the distance to all vertices is set to infinity except for the source vertex, which is set to 0. The algorithm then iteratively updates the distance to each vertex by considering all the edges that connect it to its neighbors. After n iterations (where n is the number of vertices in the graph), the algorithm converges and the resulting distance values represent the shortest paths from the source to all other vertices.</p>
-<p>The Bellman-Ford algorithm takes O(nm) time, where n is the number of vertices in the graph and m is the number of edges. If the graph contains negative cycles, the algorithm will detect them and report that no shortest path exists.
+The Floyd-Warshall algorithm is a dynamic programming algorithm that solves the all-pairs shortest paths problem in a graph with positive or negative edge weights. It finds the shortest paths between every pair of vertices in a given weighted graph.</p>
+<p>The algorithm initializes a matrix of size n x n, where n is the number of vertices in the graph, and computes the shortest path between each pair of vertices using the formula:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SPk [i, j] = min(SPk-1 [i, j], SPk-1 [i, k] + SPk-1 [k, j])
+</code></pre></div>
+<p>where SPk [i, j] is the length of the shortest path from vertex i to vertex j using vertices in the set {0, 1, ..., k-1}.</p>
+<p>The algorithm iterates through all the vertices in the graph and computes the shortest path between each pair of vertices. The time complexity of the Floyd-Warshall algorithm is O(n^3), where n is the number of vertices in the graph.
 <strong>Lec file</strong></p>
-<h1 id="lecture-53-single-source-shortest-paths-with-negative-weights-bellman-ford-algorithm_annotatedpdf-pdf-file_1">Lecture 5.3 - Single Source Shortest Paths with Negative Weights (Bellman-Ford Algorithm)_annotated.pdf (PDF file)</h1>
-<p><embed alt="Alt text" src="../Lecture%205.3%20-%20Single%20Source%20Shortest%20Paths%20with%20Negative%20Weights%20%28Bellman-Ford%20Algorithm%29_annotated.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
+<h1 id="lecture-54-all-pairs-shortest-paths-floyd-warshall-algorithm_annotatedpdf-pdf-file_1">Lecture 5.4 - All Pairs Shortest Paths (Floyd-Warshall algorithm)_annotated.pdf (PDF file)</h1>
+<p><embed alt="Alt text" src="../Lecture%205.4%20-%20All%20Pairs%20Shortest%20Paths%20%28Floyd-Warshall%20algorithm%29_annotated.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
 
 
 
