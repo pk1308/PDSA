@@ -1,6 +1,8 @@
 ```python
 import os 
-import numpy as np 
+import numpy as np
+import networkx as nx
+import matplotlib.pyplot as plt
 
 os.chdir("..")
 os.chdir("..")
@@ -20,10 +22,6 @@ print(f"time taken:{end_time}")
 
 
 ```python
-import numpy as np
-import networkx as nx
-import matplotlib.pyplot as plt
-
 # Define the number of nodes
 num_nodes = 5
 

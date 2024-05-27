@@ -15,7 +15,10 @@ nav:
 - week5:
   - week5/dijkstra_5_2.md
   - week5/Lecture 5.2 - Single Source Shortest Paths (Dijkstra_s algorithm).md
+  - week5/bellman_ford_5_3.md
   - week5/Lecture 5.1 - Shortest Paths in Weighted Graphs_annotated.md
+  - week5/Lecture 5.3 - Single Source Shortest Paths with Negative Weights (Bellman-Ford
+    Algorithm)_annotated.md
 - week1:
   - week1/exception_handling.md
   - week1/class&object.md
