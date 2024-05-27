@@ -13,12 +13,17 @@ nav:
   - week3/quicksort_anaylsis_3.2.md
   - week3/list&dictionary_imp_3_9.md
 - week5:
+  - week5/Lecture 5.6 - Minimum Cost Spanning Trees (Prim_s Algorithm)_annotated.md
   - week5/dijkstra_5_2.md
   - week5/Lecture 5.2 - Single Source Shortest Paths (Dijkstra_s algorithm).md
   - week5/bellman_ford_5_3.md
   - week5/Lecture 5.1 - Shortest Paths in Weighted Graphs_annotated.md
+  - week5/Lecture 5.4 - All Pairs Shortest Paths (Floyd-Warshall algorithm)_annotated.md
   - week5/Lecture 5.3 - Single Source Shortest Paths with Negative Weights (Bellman-Ford
     Algorithm)_annotated.md
+  - week5/prims.md
+  - week5/Lecture 5.5 - Minimum Cost Spanning Trees_annotated.md
+  - week5/floyd_warshall_5_4.md
 - week1:
   - week1/exception_handling.md
   - week1/class&object.md

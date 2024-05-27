@@ -22,9 +22,6 @@ print(f"time taken:{end_time}")
 
 
 ```python
-import numpy as np
-import networkx as nx
-import matplotlib.pyplot as plt
 
 # Number of nodes
 num_nodes = 8
