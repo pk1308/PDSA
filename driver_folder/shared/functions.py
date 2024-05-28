@@ -212,6 +212,30 @@ def create_md(files_to_create):
     return success
 
 
+def create_ipynb(files_to_create):
+    """
+    This function attempts to convert Jupyter notebook files (.ipynb) to Markdown files.
+
+    Args:
+        files_to_create (list): List of file paths.
+
+    Returns:
+        bool: True if successful, False otherwise.
+    """
+    success = True
+    for file_to in files_to_create:
+        if file_to.endswith(".ipynb"):
+            try:
+                logger.info(f"Converting {file_to} to Markdown...")
+                subprocess.run(["jupyter", "nbconvert", "--to", "markdown", file_to], check=True)
+                logger.info(f"Successfully converted {file_to} to Markdown.")
+            except subprocess.CalledProcessError as e:
+                logger.error(f"Error converting {file_to}: {e}")
+                success = False
+        else:
+            logger.info(f"{file_to} is not an .ipynb file.")
+    return success
+
 def deploy_mkdocs():
     """
   This function deploys the MkDocs site using mkdocs gh-deploy.
