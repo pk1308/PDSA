@@ -1,11 +1,13 @@
 import os
-from pathlib import Path
-import yaml
 import sys
+from pathlib import Path
+
+import yaml
 from loguru import logger
 
-
-logger.add(sys.stdout, colorize=True, format="<green>{time}</green> <level>{message}</level>")
+logger.add(
+    sys.stdout, colorize=True, format="<green>{time}</green> <level>{message}</level>"
+)
 
 
 def read_yaml_as_dict(path_to_yaml: Path):
@@ -31,10 +33,10 @@ def read_yaml_as_dict(path_to_yaml: Path):
 
 
 def write_yaml(file_path: Path, data: dict = None):
-    """ write yaml file from dict
+    """write yaml file from dict
 
     Args:
-        file_path (Path):  file path with file name 
+        file_path (Path):  file path with file name
         data (dict, optional): Data to save as yaml
 
     Raises:
@@ -76,8 +78,8 @@ def update_mydocs(folder_path="./docs"):
                 nav_value[key] = [file]
             else:
                 nav_value[key].append(file)
-                
-    yaml_file['nav'] = [{key:value}for key , value in nav_value.items()]
+
+    yaml_file["nav"] = [{key: value} for key, value in nav_value.items()]
 
     file_path = Path(os.path.join(os.getcwd(), "mkdocs.yml"))
     write_yaml(file_path, yaml_file)

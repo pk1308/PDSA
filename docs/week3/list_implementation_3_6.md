@@ -3,12 +3,12 @@ import sys
 import random
 
 
-import os 
+import os
 
 os.chdir("..")
 os.chdir("..")
 print(f" CWD : {os.getcwd()}")
-from driver_folder.time_driver import TimerError 
+from driver_folder.time_driver import TimerError
 ```
 
      CWD : /home/pk/Desktop/gitmaster/PDSA
@@ -16,7 +16,7 @@ from driver_folder.time_driver import TimerError
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
@@ -66,11 +66,8 @@ class Node:
     def __str__(self):
         result = str(self.value)
         if self.next:
-            result += ' -> ' + str(self.next)
+            result += " -> " + str(self.next)
         return result
-
-        
-    
 ```
 
 
@@ -90,7 +87,6 @@ l1.isempty()
 ```python
 l2 = Node(5)
 l2.isempty()
-
 ```
 
 
@@ -102,13 +98,12 @@ l2.isempty()
 
 
 ```python
-
 # Creating a linked list with values 1, 2, 3
 head = Node(1)
 head.append(2)
 head.append(3)
 # Output: 1 -> 2 -> 3
-print(f"Initial linked list:{head}")  
+print(f"Initial linked list:{head}")
 
 # Inserting a new node with value 4 after the first node
 head.insert(4)

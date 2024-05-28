@@ -2,16 +2,16 @@
 import sys
 import random
 
-import os 
+import os
 
 os.chdir("..")
 os.chdir("..")
-from driver_folder.time_driver import TimerError 
+from driver_folder.time_driver import TimerError
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
@@ -22,11 +22,11 @@ print(f"time taken:{end_time}")
 
 
 ```python
-zerolist = [0, 0, 0 ]
+zerolist = [0, 0, 0]
 
-zeromatrix =[zerolist, zerolist, zerolist]
+zeromatrix = [zerolist, zerolist, zerolist]
 
-zeromatrix[1][1] = 1 
+zeromatrix[1][1] = 1
 print(zeromatrix)
 ```
 
@@ -35,13 +35,13 @@ print(zeromatrix)
 
 
 ```python
-zerolist = [0, 0, 0 ]
+zerolist = [0, 0, 0]
 
-zeromatrix =[zerolist, zerolist.copy(), zerolist]
+zeromatrix = [zerolist, zerolist.copy(), zerolist]
 
-zeromatrix[1][1] = 1 
+zeromatrix[1][1] = 1
 
-zeromatrix[0][1] = 2 
+zeromatrix[0][1] = 2
 
 print(zeromatrix)
 ```
@@ -51,9 +51,9 @@ print(zeromatrix)
 
 
 ```python
-import numpy as np 
+import numpy as np
 
-zeromatrix = np.zeros((3,3))
+zeromatrix = np.zeros((3, 3))
 
 zeromatrix
 ```

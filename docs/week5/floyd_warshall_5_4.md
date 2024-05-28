@@ -1,18 +1,18 @@
 ```python
-import os 
-import numpy as np 
+import os
+import numpy as np
 
 import networkx as nx
 import matplotlib.pyplot as plt
 
 os.chdir("..")
 os.chdir("..")
-from driver_folder.time_driver import TimerError 
+from driver_folder.time_driver import TimerError
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
@@ -24,34 +24,35 @@ print(f"time taken:{end_time}")
 
 ```python
 def floydwarshall(WMat):
-    
-    rows, cols , x = WMat.shape 
-    # transitive closure matrix 
-    SP = np.full((rows,cols, cols+1),np.inf)
-    infinity = np.max(WMat)*rows*rows +1 
-    closure = 0 
-    connection = 0 
-    weight = 1 
+
+    rows, cols, x = WMat.shape
+    # transitive closure matrix
+    SP = np.full((rows, cols, cols + 1), np.inf)
+    infinity = np.max(WMat) * rows * rows + 1
+    closure = 0
+    connection = 0
+    weight = 1
     # for vertex in range(rows):
     #     for child in range(cols):
     #         SP[vertex,child, closure] = infinity
-    
+
     for vertex in range(rows):
         for child in range(cols):
-            if  WMat[vertex, child,connection] ==1:
-                SP[vertex,child, closure] = WMat[vertex, child , weight]
-    for closure_loop in range(1,cols+1):
+            if WMat[vertex, child, connection] == 1:
+                SP[vertex, child, closure] = WMat[vertex, child, weight]
+    for closure_loop in range(1, cols + 1):
         for vertex in range(rows):
             for child in range(cols):
-                SP[vertex,child,closure_loop] = min(SP[vertex,child,closure_loop-1],
-                                                    SP[vertex,closure_loop-1,closure_loop-1]+
-                                                    SP[closure_loop-1,child,closure_loop-1])
-    return SP[:,:,cols]
+                SP[vertex, child, closure_loop] = min(
+                    SP[vertex, child, closure_loop - 1],
+                    SP[vertex, closure_loop - 1, closure_loop - 1]
+                    + SP[closure_loop - 1, child, closure_loop - 1],
+                )
+    return SP[:, :, cols]
 ```
 
 
 ```python
-
 # Number of nodes
 num_nodes = 8
 
@@ -76,7 +77,7 @@ edges = [
 # Fill the adjacency matrix with the edge weights
 for edge in edges:
     u, v, weight = edge
-    adj_matrix[u, v] = [1,weight]
+    adj_matrix[u, v] = [1, weight]
 
 # Create a NetworkX graph
 G = nx.DiGraph()
@@ -87,7 +88,15 @@ for u, v, weight in edges:
 
 # Draw the graph
 pos = nx.spring_layout(G)  # Positions for all nodes
-nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=10, arrows=True)
+nx.draw(
+    G,
+    pos,
+    with_labels=True,
+    node_color="lightblue",
+    node_size=500,
+    font_size=10,
+    arrows=True,
+)
 
 # Draw edge labels
 edge_labels = {(u, v): f'{d["weight"]:.0f}' for u, v, d in G.edges(data=True)}
@@ -95,7 +104,6 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=10)
 
 plt.title("Graph with a Negative Cycle")
 plt.show()
-
 ```
 
 

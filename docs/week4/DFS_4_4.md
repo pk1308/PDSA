@@ -1,15 +1,15 @@
 ```python
-import os 
-import numpy as np 
+import os
+import numpy as np
 
 os.chdir("..")
 os.chdir("..")
-from driver_folder.time_driver import TimerError 
+from driver_folder.time_driver import TimerError
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
@@ -39,6 +39,7 @@ def DFSInitList(AList):
         parent[i] = -1
     return (visited, parent)
 
+
 def DFSList(AList, visited, parent, v):
     """
     Performs Depth-First Search (DFS) traversal recursively starting from node v.
@@ -61,6 +62,7 @@ def DFSList(AList, visited, parent, v):
             DFSList(AList, visited, parent, k)
     return (visited, parent)
 
+
 def DFSGlobal(AList, k):
     """
     Initializes DFS and starts DFS traversal from node k in the graph.
@@ -78,22 +80,22 @@ def DFSGlobal(AList, k):
     (visited, parent) = DFSList(AList, visited, parent, k)
     return (visited, parent)
 
+
 # Example usage:
 AList = {
-    'A': ['B', 'C'],
-    'B': ['A', 'D', 'E'],
-    'C': ['A', 'F'],
-    'D': ['B'],
-    'E': ['B', 'F'],
-    'F': ['C', 'E']
+    "A": ["B", "C"],
+    "B": ["A", "D", "E"],
+    "C": ["A", "F"],
+    "D": ["B"],
+    "E": ["B", "F"],
+    "F": ["C", "E"],
 }
 
 # Starting node
-start_node = 'A'
+start_node = "A"
 visited, parent = DFSGlobal(AList, start_node)
 print("Visited nodes:", visited)
 print("Parent nodes:", parent)
-
 ```
 
     Visited nodes: {'A': True, 'B': True, 'C': True, 'D': True, 'E': True, 'F': True}

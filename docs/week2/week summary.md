@@ -1,46 +1,48 @@
 ```python
 import sys
-sys.setrecursionlimit(2**31-1)
+
+sys.setrecursionlimit(2**31 - 1)
 ```
 
 
 ```python
-
 import sys
-from loguru import logger as lg 
+from loguru import logger as lg
 import random
 import time
 
 
 class TimerError(Exception):
     def __init__(self) -> None:
-        self._start_time = None 
-        self._stop_time = None 
+        self._start_time = None
+        self._stop_time = None
         self.elapsed_time = None
-        
+
     def start(self):
         if self._start_time != None:
             raise TimerError(" please stop the timer")
         self._start_time = time.perf_counter()
         self._stop_time = None
-    
+
     def stop(self):
         if self._start_time == None:
             raise TimerError("please start the timer")
         self._stop_time = time.perf_counter()
         self.elapsed_time = self._stop_time - self._start_time
-        self._start_time = None 
+        self._start_time = None
+
     def elapsed(self):
-        if self.elapsed == None and self._start_time== None:
+        if self.elapsed == None and self._start_time == None:
             raise TimerError("the counter not running")
         else:
             self.stop()
             return self.elapsed_time
+
     def __str__(self) -> str:
-        return (str(self.elapsed_time))
+        return str(self.elapsed_time)
 
 
-T =TimerError()
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 lg.info(f"time taken:{end_time}")
@@ -56,27 +58,24 @@ random.seed(1965)
 
 
 ```python
-L = [ random.randint(1,1000000000) for i in range(10000)]
-
+L = [random.randint(1, 1000000000) for i in range(10000)]
 ```
 
 
 ```python
-v = random.randint(1,1000000)
+v = random.randint(1, 1000000)
 ```
 
 # Naive Approach 
 
 
 ```python
-def naive_search(V,L):
+def naive_search(V, L):
     for x in L:
-        if V==x:
-            return True 
+        if V == x:
+            return True
     else:
-        return False 
-    
-    
+        return False
 ```
 
 complexity = O(n)
@@ -88,25 +87,25 @@ complexity = O(n)
 
 ```python
 def sort_list(L: list):
-    if len(L) ==0:
+    if len(L) == 0:
         return []
-    midpoint = len(L)//2
+    midpoint = len(L) // 2
     mid_value = L[midpoint]
     lower_list = [low for low in L if low < mid_value]
     mid_list = [mid for mid in L if mid == mid_value]
-    upper_list = [ upper for  upper in L if  upper > mid_value]
-    return sort_list(lower_list)+mid_list+sort_list(upper_list)
+    upper_list = [upper for upper in L if upper > mid_value]
+    return sort_list(lower_list) + mid_list + sort_list(upper_list)
 ```
 
 
 ```python
-midpoint = len(L)//2
+midpoint = len(L) // 2
 mid_value = L[midpoint]
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 print(f"length of L :{len(L)}")
 sort_list(L)
@@ -123,29 +122,29 @@ lg.info(f"time taken:{end_time}")
 
 ```python
 def sort_list(L: list) -> list:
-  """Sorts a list of numbers in ascending order using Quicksort algorithm.
+    """Sorts a list of numbers in ascending order using Quicksort algorithm.
 
-  Args:
-      L: The list to be sorted.
+    Args:
+        L: The list to be sorted.
 
-  Returns:
-      A new list containing the sorted elements of the original list.
-  """
+    Returns:
+        A new list containing the sorted elements of the original list.
+    """
 
-  if len(L) <= 1:
-    return L
+    if len(L) <= 1:
+        return L
 
-  midpoint = len(L) // 2
-  mid_value = L[midpoint]
-  lower_list = sort_list([low for low in L if low < mid_value])
-  upper_list = sort_list([upper for upper in L if upper > mid_value])
-  mid_list = [mid for mid in L if mid == mid_value]
-  return lower_list + mid_list + upper_list
+    midpoint = len(L) // 2
+    mid_value = L[midpoint]
+    lower_list = sort_list([low for low in L if low < mid_value])
+    upper_list = sort_list([upper for upper in L if upper > mid_value])
+    mid_list = [mid for mid in L if mid == mid_value]
+    return lower_list + mid_list + upper_list
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 print(f"length of L :{len(L)}")
 L = sort_list(L)
@@ -161,25 +160,25 @@ lg.info(f"time taken:{end_time}")
 
 
 ```python
-def binarysearch(v: int ,L : list)-> bool:
-    
+def binarysearch(v: int, L: list) -> bool:
+
     if not L:
-        return False 
+        return False
     midpoint = len(L) // 2
-    
+
     if v == L[midpoint]:
-        return True 
+        return True
     if v < L[midpoint]:
         return binarysearch(v, L[:midpoint])
     else:
-        return binarysearch(v, L[midpoint+1:])
+        return binarysearch(v, L[midpoint + 1 :])
 ```
 
 Complexity = O(logn)
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 print(f"length of L :{len(L)}")
 end_time = T.elapsed()
@@ -194,10 +193,10 @@ lg.info(f"time taken naive :{end_time}")
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 print(f"length of L :{len(L)}")
-print(binarysearch(v,L))
+print(binarysearch(v, L))
 end_time = T.elapsed()
 lg.info(f"time taken binary:{end_time}")
 ```
@@ -211,38 +210,43 @@ lg.info(f"time taken binary:{end_time}")
 
 
 ```python
-
 def SelectionSort(L):
     n = len(L)
     if n <= 1:
-        return(L)
+        return L
     for i in range(n):
         # Assume L[:i] is sorted
         mpos = i
         # mpos: position of minimum in L[i:]
-        for j in range(i+1,n):
+        for j in range(i + 1, n):
             if L[j] < L[mpos]:
                 mpos = j
                 # L[mpos] : smallest value in L[i:]
                 # # Exchange L[mpos] and L[i]
-                (L[i],L[mpos]) = (L[mpos],L[i])
+                (L[i], L[mpos]) = (L[mpos], L[i])
                 # Now L[:i+1] is sorted
-                return(L)
-T =TimerError()
+                return L
+
+
+T = TimerError()
 T.start()
 SelectionSort(L)
 end_time_1 = T.elapsed()
 lg.info(f"time taken SelectionSort:{end_time_1}")
+
+
 def sort_list(L: list):
-    if len(L) ==0:
+    if len(L) == 0:
         return []
-    midpoint = len(L)//2
+    midpoint = len(L) // 2
     mid_value = L[midpoint]
     lower_list = [low for low in L if low < mid_value]
     mid_list = [mid for mid in L if mid == mid_value]
-    upper_list = [ upper for  upper in L if  upper > mid_value]
-    return sort_list(lower_list)+mid_list+sort_list(upper_list)
-T =TimerError()
+    upper_list = [upper for upper in L if upper > mid_value]
+    return sort_list(lower_list) + mid_list + sort_list(upper_list)
+
+
+T = TimerError()
 T.start()
 sort_list(L)
 end_time_2 = T.elapsed()
@@ -255,59 +259,63 @@ lg.info(f"time taken sort_list:{end_time_2}")
 
 
 ```python
-# insertion sort 
+# insertion sort
 def insertion_sort(L):
     """
     Sorts a list using the insertion sort algorithm.
-    
+
     Args:
         L (list): The list to be sorted.
-        
+
     Returns:
         list: The sorted list.
     """
     n = len(L)
-    
+
     # If the list has 1 or fewer elements, it is already sorted
     if n <= 1:
         return L
-    
+
     # Iterate through each element in the list
     for i in range(n):
         j = i
-        
+
         # Mo value_to_inserte the element at index j towards the beginning of the list
         # until it's in the correct sorted position
         while j > 0 and L[j] < L[j - 1]:
             # Swap the current element with the prevalue_to_insertalue_to_insertious one if it's smaller
             L[j], L[j - 1] = L[j - 1], L[j]
-            j -= 1  # Decrement j to movalue_to_inserte towards the beginning of the list
-            
+            j -= (
+                1  # Decrement j to movalue_to_inserte towards the beginning of the list
+            )
+
     return L
 
-T =TimerError()
+
+T = TimerError()
 T.start()
 insertion_sort(L)
 end_time = T.elapsed()
 lg.info(f"time taken insertion_sort:{end_time}")
 
+
 def Insert(List_to_sort, Value_to_insert):
     """
     Inserts a value into a sorted list while maintaining the sorted order.
-    
+
     Args:
         List_to_sort (list): The sorted list to insert the value into.
         Value_to_insert (Any): The value to insert into the list.
-        
+
     Returns:
         list: The sorted list after inserting the value.
     """
     n = len(List_to_sort)
-    
+
     # If the list is empty, simply return the value as a single-element list
     if n == 0:
         return [Value_to_insert]
-    
+
     # If the value is greater than or equal to the last element in the list,
     # append it to the end of the list
     if Value_to_insert >= List_to_sort[-1]:
@@ -317,29 +325,31 @@ def Insert(List_to_sort, Value_to_insert):
         # and then append the last element of List_to_sort to the result
         return Insert(List_to_sort[:-1], Value_to_insert) + List_to_sort[-1:]
 
+
 def ISort(List_to_sort):
     """
     Sorts a list using the insertion sort algorithm recursively.
-    
+
     Args:
         List_to_sort (list): The list to be sorted.
-        
+
     Returns:
         list: The sorted list.
     """
     n = len(List_to_sort)
-    
+
     # If the list has less than 1 element, it is already sorted
     if n < 1:
         return List_to_sort
-    
+
     # Recursively sort the sublist List_to_sort[:-1]
     # and then insert the last element of List_to_sort into the sorted sublist
     L = Insert(ISort(List_to_sort[:-1]), List_to_sort[-1])
-    
+
     return L
 
-T =TimerError()
+
+T = TimerError()
 T.start()
 ISort(L)
 end_time = T.elapsed()
@@ -394,24 +404,22 @@ def mergesort(A):
         list: The sorted list.
     """
     n = len(A)
-    
+
     # Base case: If the list has 0 or 1 element, it is already sorted
     if n <= 1:
         return A
-    
+
     # Recursively split the list into two halves and sort each half
-    L = mergesort(A[:n // 2])
-    R = mergesort(A[n // 2:])
-    
+    L = mergesort(A[: n // 2])
+    R = mergesort(A[n // 2 :])
+
     # Merge the sorted halves
     B = merge(L, R)
-    
+
     return B
 
 
-
-
-T =TimerError()
+T = TimerError()
 T.start()
 mergesort(L)
 end_time = T.elapsed()
@@ -423,11 +431,10 @@ lg.info(f"time taken merge sort :{end_time}")
 
 
 ```python
-
-T =TimerError()
+T = TimerError()
 T.start()
 
-mergesort(list(range(1000000,0,-1)))
+mergesort(list(range(1000000, 0, -1)))
 end_time = T.elapsed()
 lg.info(f"time taken merge sort :{end_time}")
 ```
@@ -437,8 +444,7 @@ lg.info(f"time taken merge sort :{end_time}")
 
 
 ```python
-
-T =TimerError()
+T = TimerError()
 T.start()
 
 mergesort(list(range(1000000)))
@@ -451,8 +457,8 @@ lg.info(f"time taken merge sort :{end_time}")
 
 
 ```python
-L = [ random.randint(1,1000000) for i in range(1000000)]
-T =TimerError()
+L = [random.randint(1, 1000000) for i in range(1000000)]
+T = TimerError()
 T.start()
 mergesort(L)
 end_time = T.elapsed()

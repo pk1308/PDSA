@@ -1,38 +1,42 @@
 ```python
-from loguru import logger as lg 
+from loguru import logger as lg
 import random
 import time
 
 
 class TimerError(Exception):
     def __init__(self) -> None:
-        self._start_time = None 
-        self._stop_time = None 
+        self._start_time = None
+        self._stop_time = None
         self.elapsed_time = None
-        
+
     def start(self):
         if self._start_time != None:
             raise TimerError(" please stop the timer")
         self._start_time = time.perf_counter()
         self._stop_time = None
-    
+
     def stop(self):
         if self._start_time == None:
             raise TimerError("please start the timer")
         self._stop_time = time.perf_counter()
         self.elapsed_time = self._stop_time - self._start_time
-        self._start_time = None 
+        self._start_time = None
+
     def elapsed(self):
-        if self.elapsed == None and self._start_time== None:
+        if self.elapsed == None and self._start_time == None:
             raise TimerError("the counter not running")
         else:
             self.stop()
             return self.elapsed_time
+
     def __str__(self) -> str:
-        return (str(self.elapsed_time))
+        return str(self.elapsed_time)
+
+
 # lg.add(sys.stdout, colorize=True)
 
-T =TimerError()
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 lg.info(f"time taken:{end_time}")
@@ -43,8 +47,8 @@ lg.info(f"time taken:{end_time}")
 
 
 ```python
-L = [ random.randint(1,100) for i in range(1000)]
-V= random.randint(1,100)
+L = [random.randint(1, 100) for i in range(1000)]
+V = random.randint(1, 100)
 ```
 
 
@@ -91,30 +95,26 @@ def mergesort(A):
         list: The sorted list.
     """
     n = len(A)
-    
+
     # Base case: If the list has 0 or 1 element, it is already sorted
     if n <= 1:
         return A
-    
+
     # Recursively split the list into two halves and sort each half
-    L = mergesort(A[:n // 2])
-    R = mergesort(A[n // 2:])
-    
+    L = mergesort(A[: n // 2])
+    R = mergesort(A[n // 2 :])
+
     # Merge the sorted halves
     B = merge(L, R)
-    
+
     return B
-
-
-
 ```
 
 $$complexity\ =\ O\left( nlogn\right)$$
 
 
 ```python
-
-T =TimerError()
+T = TimerError()
 T.start()
 mergesort(L)
 end_time = T.elapsed()

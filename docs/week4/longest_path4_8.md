@@ -1,15 +1,15 @@
 ```python
-import os 
-import numpy as np 
+import os
+import numpy as np
 
 os.chdir("..")
 os.chdir("..")
-from driver_folder.time_driver import TimerError 
+from driver_folder.time_driver import TimerError
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
@@ -21,6 +21,7 @@ print(f"time taken:{end_time}")
 
 ```python
 from queue import Queue
+
 
 def longestpathlist(AList):
     """
@@ -63,18 +64,12 @@ def longestpathlist(AList):
 
     return lpath
 
+
 # Example usage:
-AList = {
-    'A': ['B', 'C'],
-    'B': ['D'],
-    'C': ['D'],
-    'D': ['E'],
-    'E': []
-}
+AList = {"A": ["B", "C"], "B": ["D"], "C": ["D"], "D": ["E"], "E": []}
 
 # Prints the longest path lengths from each node
 print(longestpathlist(AList))
-
 ```
 
     {'A': 0, 'B': 1, 'C': 1, 'D': 2, 'E': 3}

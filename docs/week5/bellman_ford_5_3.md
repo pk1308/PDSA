@@ -1,17 +1,17 @@
 ```python
-import os 
-import numpy as np 
+import os
+import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 
 os.chdir("..")
 os.chdir("..")
-from driver_folder.time_driver import TimerError 
+from driver_folder.time_driver import TimerError
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
@@ -22,7 +22,6 @@ print(f"time taken:{end_time}")
 
 
 ```python
-
 # Number of nodes
 num_nodes = 8
 
@@ -47,7 +46,7 @@ edges = [
 # Fill the adjacency matrix with the edge weights
 for edge in edges:
     u, v, weight = edge
-    adj_matrix[u, v] = [1,weight]
+    adj_matrix[u, v] = [1, weight]
 
 # Create a NetworkX graph
 G = nx.DiGraph()
@@ -58,7 +57,15 @@ for u, v, weight in edges:
 
 # Draw the graph
 pos = nx.spring_layout(G)  # Positions for all nodes
-nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=10, arrows=True)
+nx.draw(
+    G,
+    pos,
+    with_labels=True,
+    node_color="lightblue",
+    node_size=500,
+    font_size=10,
+    arrows=True,
+)
 
 # Draw edge labels
 edge_labels = {(u, v): f'{d["weight"]:.0f}' for u, v, d in G.edges(data=True)}
@@ -66,7 +73,6 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=10)
 
 plt.title("Graph with a Negative Cycle")
 plt.show()
-
 ```
 
 
@@ -77,22 +83,24 @@ plt.show()
 
 
 ```python
-def bellmanford(Wmat , source):
-    rows, cols , x = Wmat.shape
+def bellmanford(Wmat, source):
+    rows, cols, x = Wmat.shape
     connection = 0
     weights = 1
-    infinity =  np.max(Wmat) *rows +1 
+    infinity = np.max(Wmat) * rows + 1
     distance = {}
-    
+
     for vertex in range(rows):
         distance[vertex] = infinity
-    
-    distance[source] = 0 
+
+    distance[source] = 0
     for _ in range(rows):
         for vertex in range(rows):
             for child in range(cols):
-                if Wmat[vertex, child, connection] ==1:
-                    distance[child] = min(distance[child] , distance[vertex]+Wmat[vertex, child, weight])
+                if Wmat[vertex, child, connection] == 1:
+                    distance[child] = min(
+                        distance[child], distance[vertex] + Wmat[vertex, child, weight]
+                    )
     return distance
 ```
 
@@ -124,10 +132,9 @@ for i in range(num_nodes):
             G.add_edge(i, j, weight=adj_matrix[i, j, 1])
 
 
-
 # Draw the graph
 pos = nx.spring_layout(G)  # Positions for all nodes
-nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=10)
+nx.draw(G, pos, with_labels=True, node_color="lightblue", node_size=500, font_size=10)
 
 # Draw edge labels
 edge_labels = {(u, v): f'{d["weight"]:.0f}' for u, v, d in G.edges(data=True)}
@@ -135,7 +142,14 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=10)
 
 # Add the distance information to the plot
 for node, dist in distance.items():
-    plt.annotate(f'Dist: {dist}', xy=pos[node], xytext=(5, 5), textcoords='offset points', fontsize=10, color='red')
+    plt.annotate(
+        f"Dist: {dist}",
+        xy=pos[node],
+        xytext=(5, 5),
+        textcoords="offset points",
+        fontsize=10,
+        color="red",
+    )
 
 plt.title("Weighted Graph with Distances")
 plt.show()

@@ -1,16 +1,16 @@
 ```python
 import sys
 import random
-import os 
+import os
 
 os.chdir("..")
 os.chdir("..")
-from driver_folder.time_driver import TimerError 
+from driver_folder.time_driver import TimerError
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
@@ -21,12 +21,12 @@ print(f"time taken:{end_time}")
 
 
 ```python
-sys.setrecursionlimit(2**31-1)
+sys.setrecursionlimit(2**31 - 1)
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 l = []
 for i in range(10**7):
@@ -40,11 +40,11 @@ print(f"time taken:{end_time}")
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 l = []
 for i in range(10**5):
-    l.insert(0,i)
+    l.insert(0, i)
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
 ```
@@ -54,11 +54,11 @@ print(f"time taken:{end_time}")
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 l = []
-for i in range((10**5)*2):
-    l.insert(0,i)
+for i in range((10**5) * 2):
+    l.insert(0, i)
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
 ```
@@ -68,11 +68,11 @@ print(f"time taken:{end_time}")
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 l = []
-for i in range((10**5)*3):
-    l.insert(0,i)
+for i in range((10**5) * 3):
+    l.insert(0, i)
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
 ```

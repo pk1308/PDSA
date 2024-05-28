@@ -1,40 +1,46 @@
 ```python
-
 import sys
 from loguru import logger
 import random
 import time
 
 logger.remove()
-logger.add(sys.stdout, colorize=True,format="<level>{level}</level> | <blue>{message}</blue>")
+logger.add(
+    sys.stdout, colorize=True, format="<level>{level}</level> | <blue>{message}</blue>"
+)
+
+
 class TimerError(Exception):
     def __init__(self) -> None:
-        self._start_time = None 
-        self._stop_time = None 
+        self._start_time = None
+        self._stop_time = None
         self.elapsed_time = None
-        
+
     def start(self):
         if self._start_time != None:
             raise TimerError(" please stop the timer")
         self._start_time = time.perf_counter()
         self._stop_time = None
-    
+
     def stop(self):
         if self._start_time == None:
             raise TimerError("please start the timer")
         self._stop_time = time.perf_counter()
         self.elapsed_time = self._stop_time - self._start_time
-        self._start_time = None 
+        self._start_time = None
+
     def elapsed(self):
-        if self.elapsed == None and self._start_time== None:
+        if self.elapsed == None and self._start_time == None:
             raise TimerError("the counter not running")
         else:
             self.stop()
             return self.elapsed_time
-    def __str__(self) -> str:
-        return (str(self.elapsed_time))
 
-T =TimerError()
+    def __str__(self) -> str:
+        return str(self.elapsed_time)
+
+
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 logger.info(f"time taken:{end_time}")
@@ -71,7 +77,7 @@ choose a pivot element
 
 
 ```python
-def quicksort(L: list, lower_index: int , upper_index: int):
+def quicksort(L: list, lower_index: int, upper_index: int):
     """
     Sorts a list using the Quicksort algorithm.
 
@@ -100,29 +106,27 @@ def quicksort(L: list, lower_index: int , upper_index: int):
 
     # Move pivot between lower and upper
     L[lower - 1], L[lower_index] = L[lower_index], L[lower - 1]
-    
+
     # Recursive calls
     quicksort(L, lower_index=lower_index, upper_index=lower - 1)
     quicksort(L, lower_index=lower, upper_index=upper_index)
 
-    
     return L
-
 ```
 
 ![image.png](quick_sort_3_1_files/image.png)
 
 
 ```python
-L = [ random.randint(1,100) for i in range(100000)]
-V= random.randint(1,100)
+L = [random.randint(1, 100) for i in range(100000)]
+V = random.randint(1, 100)
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
-quicksort(L, 0 , len(L))
+quicksort(L, 0, len(L))
 end_time = T.elapsed()
 logger.info(f"time taken:{end_time}")
 ```

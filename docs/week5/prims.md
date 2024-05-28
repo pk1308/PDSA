@@ -1,17 +1,18 @@
 ```python
-import os 
-import numpy as np 
+import os
+import numpy as np
 
 import networkx as nx
 import matplotlib.pyplot as plt
+
 os.chdir("..")
 os.chdir("..")
-from driver_folder.time_driver import TimerError 
+from driver_folder.time_driver import TimerError
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 end_time = T.elapsed()
 print(f"time taken:{end_time}")
@@ -24,9 +25,14 @@ print(f"time taken:{end_time}")
 ```python
 def primlist(weighted_adj_list):
     # Initialize the infinity value to a number greater than any edge weight
-    infinity = 1 + max([weight for u in weighted_adj_list.keys() 
-                        for (v, weight) in weighted_adj_list[u]])
-    
+    infinity = 1 + max(
+        [
+            weight
+            for u in weighted_adj_list.keys()
+            for (v, weight) in weighted_adj_list[u]
+        ]
+    )
+
     # Initialize the visited dictionary to keep track of visited nodes
     # Initialize the distance dictionary to store the minimum distance to each node
     # Initialize the list to store the edges of the Minimum Spanning Tree (MST)
@@ -41,40 +47,43 @@ def primlist(weighted_adj_list):
 
     # Start with the first node (node 0)
     visited[0] = True
-    
+
     # Update the distances for the adjacent nodes of node 0
-    for (neighbor, weight) in weighted_adj_list[0]:
+    for neighbor, weight in weighted_adj_list[0]:
         min_distance[neighbor] = weight
-    
+
     # Loop to find the minimum distance edge connecting a visited node to an unvisited node
     for _ in range(len(weighted_adj_list) - 1):
         min_edge_weight = infinity
         next_node = None
         next_edge = None
-        
+
         # Find the minimum weight edge from the visited set to the unvisited set
         for current_node in weighted_adj_list.keys():
-            for (neighbor, weight) in weighted_adj_list[current_node]:
-                if visited[current_node] and not visited[neighbor] and weight < min_edge_weight:
+            for neighbor, weight in weighted_adj_list[current_node]:
+                if (
+                    visited[current_node]
+                    and not visited[neighbor]
+                    and weight < min_edge_weight
+                ):
                     min_edge_weight = weight
                     next_node = neighbor
                     next_edge = (current_node, neighbor)
-        
+
         # If no next node is found, the graph is disconnected
         if next_node is None:
             break
-        
+
         # Mark the next node as visited and add the edge to the MST
         visited[next_node] = True
         mst_edges.append(next_edge)
-        
+
         # Update the distances for the adjacent nodes of the newly visited node
-        for (neighbor, weight) in weighted_adj_list[next_node]:
+        for neighbor, weight in weighted_adj_list[next_node]:
             if not visited[neighbor]:
                 min_distance[neighbor] = min(min_distance[neighbor], weight)
-    
-    return mst_edges
 
+    return mst_edges
 ```
 
 
@@ -99,7 +108,6 @@ def primlist(weighted_adj_list):
 
 
 ```python
-
 weighted_adj_list = {
     0: [(1, 10), (7, 8)],
     1: [(0, 10), (2, 1), (5, 2)],
@@ -108,13 +116,11 @@ weighted_adj_list = {
     4: [(3, 3), (5, -1)],
     5: [(4, -1), (6, -1), (2, -2)],
     6: [(5, -1), (7, 1)],
-    7: [(6, 1), (0, 8)]
+    7: [(6, 1), (0, 8)],
 }
 
 mst_edges = primlist(weighted_adj_list)
 print("Minimum Spanning Tree Edges:", mst_edges)
-
-
 ```
 
     Minimum Spanning Tree Edges: [(0, 7), (7, 6), (6, 5), (5, 2), (5, 4), (2, 1), (2, 3)]
@@ -125,13 +131,13 @@ print("Minimum Spanning Tree Edges:", mst_edges)
 # Create a NetworkX graph for the original graph
 G = nx.DiGraph()
 for u in weighted_adj_list.keys():
-    for (v, weight) in weighted_adj_list[u]:
+    for v, weight in weighted_adj_list[u]:
         G.add_edge(u, v, weight=weight)
 
 # Create a NetworkX graph for the MST
 MST = nx.DiGraph()
-for (u, v) in mst_edges:
-    for (x, weight) in weighted_adj_list[u]:
+for u, v in mst_edges:
+    for x, weight in weighted_adj_list[u]:
         if x == v:
             MST.add_edge(u, v, weight=weight)
 
@@ -140,14 +146,30 @@ pos = nx.spring_layout(G)  # Positions for all nodes
 plt.figure(figsize=(12, 6))
 
 plt.subplot(121)
-nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=10, arrows=True)
+nx.draw(
+    G,
+    pos,
+    with_labels=True,
+    node_color="lightblue",
+    node_size=500,
+    font_size=10,
+    arrows=True,
+)
 edge_labels = {(u, v): f'{d["weight"]:.0f}' for u, v, d in G.edges(data=True)}
 nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=10)
 plt.title("Original Graph")
 
 # Plot the Minimum Spanning Tree
 plt.subplot(122)
-nx.draw(MST, pos, with_labels=True, node_color='lightgreen', node_size=500, font_size=10, arrows=True)
+nx.draw(
+    MST,
+    pos,
+    with_labels=True,
+    node_color="lightgreen",
+    node_size=500,
+    font_size=10,
+    arrows=True,
+)
 mst_edge_labels = {(u, v): f'{d["weight"]:.0f}' for u, v, d in MST.edges(data=True)}
 nx.draw_networkx_edge_labels(MST, pos, edge_labels=mst_edge_labels, font_size=10)
 plt.title("Minimum Spanning Tree")
@@ -163,12 +185,12 @@ plt.show()
 
 
 ```python
-
-
 def prim_mst(adj_list):
-  
+
     # Define infinity as a value larger than any edge weight
-    infinity = 1 + max([weight for node in adj_list.keys() for (neighbor, weight) in adj_list[node]])
+    infinity = 1 + max(
+        [weight for node in adj_list.keys() for (neighbor, weight) in adj_list[node]]
+    )
 
     # Initialize dictionaries to keep track of visited nodes, minimum distances, and parent nodes
     visited = {}
@@ -185,15 +207,21 @@ def prim_mst(adj_list):
     visited[0] = True
 
     # Update the distances and parents for the adjacent nodes of node 0
-    for (neighbor, weight) in adj_list[0]:
+    for neighbor, weight in adj_list[0]:
         min_distance[neighbor] = weight
         parent[neighbor] = 0
 
     # Loop to find the minimum distance edge connecting a visited node to an unvisited node
     for _ in range(1, len(adj_list.keys())):
         # Find the smallest distance among the unvisited nodes
-        next_distance = min([min_distance[node] for node in adj_list.keys() if not visited[node]])
-        next_node_candidates = [node for node in adj_list.keys() if not visited[node] and min_distance[node] == next_distance]
+        next_distance = min(
+            [min_distance[node] for node in adj_list.keys() if not visited[node]]
+        )
+        next_node_candidates = [
+            node
+            for node in adj_list.keys()
+            if not visited[node] and min_distance[node] == next_distance
+        ]
 
         if not next_node_candidates:
             break
@@ -203,15 +231,12 @@ def prim_mst(adj_list):
         visited[next_node] = True
 
         # Update the distances and parents for the adjacent nodes of the newly visited node
-        for (neighbor, weight) in adj_list[next_node]:
+        for neighbor, weight in adj_list[next_node]:
             if not visited[neighbor] and weight < min_distance[neighbor]:
                 min_distance[neighbor] = weight
                 parent[neighbor] = next_node
 
     return parent
-
-
-
 ```
 
 
@@ -225,13 +250,11 @@ weighted_adj_list = {
     4: [(3, 3), (5, -1)],
     5: [(4, -1), (6, -1), (2, -2)],
     6: [(5, -1), (7, 1)],
-    7: [(6, 1), (0, 8)]
+    7: [(6, 1), (0, 8)],
 }
 
 mst_parents = prim_mst(weighted_adj_list)
 print("Parent nodes in MST:", mst_parents)
-
-
 ```
 
     Parent nodes in MST: {0: -1, 1: 2, 2: 5, 3: 2, 4: 5, 5: 6, 6: 7, 7: 0}
@@ -242,10 +265,10 @@ print("Parent nodes in MST:", mst_parents)
 def create_mst_edges(parents):
     """
     Creates a list of edges for the Minimum Spanning Tree (MST) from the parent node dictionary.
-    
+
     Args:
     parents (dict): A dictionary where keys are nodes and values are their respective parent nodes in the MST.
-    
+
     Returns:
     list: A list of tuples representing the edges in the MST.
     """
@@ -258,21 +281,19 @@ def create_mst_edges(parents):
 
 
 ```python
-
-
 mst_edges = create_mst_edges(mst_parents)
 print("MST Edges:", mst_edges)
 
 # Create a NetworkX graph for the original graph
 G = nx.DiGraph()
 for u in weighted_adj_list.keys():
-    for (v, weight) in weighted_adj_list[u]:
+    for v, weight in weighted_adj_list[u]:
         G.add_edge(u, v, weight=weight)
 
 # Create a NetworkX graph for the MST
 MST = nx.DiGraph()
-for (u, v) in mst_edges:
-    for (x, weight) in weighted_adj_list[u]:
+for u, v in mst_edges:
+    for x, weight in weighted_adj_list[u]:
         if x == v:
             MST.add_edge(u, v, weight=weight)
 
@@ -281,14 +302,30 @@ pos = nx.spring_layout(G)  # Positions for all nodes
 plt.figure(figsize=(12, 6))
 
 plt.subplot(121)
-nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=10, arrows=True)
+nx.draw(
+    G,
+    pos,
+    with_labels=True,
+    node_color="lightblue",
+    node_size=500,
+    font_size=10,
+    arrows=True,
+)
 edge_labels = {(u, v): f'{d["weight"]:.0f}' for u, v, d in G.edges(data=True)}
 nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=10)
 plt.title("Original Graph")
 
 # Plot the Minimum Spanning Tree
 plt.subplot(122)
-nx.draw(MST, pos, with_labels=True, node_color='lightgreen', node_size=500, font_size=10, arrows=True)
+nx.draw(
+    MST,
+    pos,
+    with_labels=True,
+    node_color="lightgreen",
+    node_size=500,
+    font_size=10,
+    arrows=True,
+)
 mst_edge_labels = {(u, v): f'{d["weight"]:.0f}' for u, v, d in MST.edges(data=True)}
 nx.draw_networkx_edge_labels(MST, pos, edge_labels=mst_edge_labels, font_size=10)
 plt.title("Minimum Spanning Tree")

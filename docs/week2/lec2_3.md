@@ -1,47 +1,45 @@
 ```python
-
 import sys
-from loguru import logger as lg 
+from loguru import logger as lg
 import random
 import time
-
-
-
 ```
 
 
 ```python
 class TimerError(Exception):
     def __init__(self) -> None:
-        self._start_time = None 
-        self._stop_time = None 
+        self._start_time = None
+        self._stop_time = None
         self.elapsed_time = None
-        
+
     def start(self):
         if self._start_time != None:
             raise TimerError(" please stop the timer")
         self._start_time = time.perf_counter()
         self._stop_time = None
-    
+
     def stop(self):
         if self._start_time == None:
             raise TimerError("please start the timer")
         self._stop_time = time.perf_counter()
         self.elapsed_time = self._stop_time - self._start_time
-        self._start_time = None 
+        self._start_time = None
+
     def elapsed(self):
-        if self.elapsed == None and self._start_time== None:
+        if self.elapsed == None and self._start_time == None:
             raise TimerError("the counter not running")
         else:
             self.stop()
             return self.elapsed_time
+
     def __str__(self) -> str:
-        return (str(self.elapsed_time))
+        return str(self.elapsed_time)
 ```
 
 
 ```python
-L = [ random.randint(1,1000000000) for i in range(1000000)]
+L = [random.randint(1, 1000000000) for i in range(1000000)]
 ```
 
 
@@ -91,15 +89,15 @@ $$
 ```python
 def noDuplicates(L):
     for i in range(len(L)):
-        for j in range(i+1,len(L)):
+        for j in range(i + 1, len(L)):
             if L[i] == L[j]:
-                return(False)
-    return(True)
+                return False
+    return True
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 result = noDuplicates(L)
 lg.info(result)
@@ -129,31 +127,30 @@ Matrix multiplication
 
 
 ```python
-def matrix_Multiplication(A ,  B):
-    (m,n,p) = (len(A),len(B),len(B[0]))
-    C = [[ 0 for i in range(p) ]
-         for j in range(m) ]
+def matrix_Multiplication(A, B):
+    (m, n, p) = (len(A), len(B), len(B[0]))
+    C = [[0 for i in range(p)] for j in range(m)]
     for i in range(m):
         for j in range(p):
             for k in range(n):
-                C[i][j] = C[i][j] + A[i][k]*B[k][j]
-    return(C)
+                C[i][j] = C[i][j] + A[i][k] * B[k][j]
+    return C
 ```
 
 
 ```python
-m , n = 100, 1001
+m, n = 100, 1001
 ```
 
 
 ```python
-A = [[random.randint(1,100) for _ in range(n)]  for j in range(m)]
-B = [[random.randint(1,100) for _ in range(m)]  for j in range(n)]
+A = [[random.randint(1, 100) for _ in range(n)] for j in range(m)]
+B = [[random.randint(1, 100) for _ in range(m)] for j in range(n)]
 ```
 
 
 ```python
-len(A[0]) , len(B)
+len(A[0]), len(B)
 ```
 
 
@@ -165,9 +162,9 @@ len(A[0]) , len(B)
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
-result = matrix_Multiplication(A,B)
+result = matrix_Multiplication(A, B)
 # lg.info(result)
 end_time = T.elapsed()
 lg.info(f"time take \n {end_time}")
@@ -179,14 +176,14 @@ lg.info(f"time take \n {end_time}")
 
 
 ```python
-import numpy as np 
+import numpy as np
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
-result = np.matmul(A,B)
+result = np.matmul(A, B)
 # lg.info(result)
 end_time = T.elapsed()
 lg.info(f"time take \n {end_time}")
@@ -211,12 +208,12 @@ def numberOfBits(n):
     while n > 1:
         count = count + 1
         n = n // 2
-    return(count)
+    return count
 ```
 
 
 ```python
-T =TimerError()
+T = TimerError()
 T.start()
 result = numberOfBits(12564665525885888)
 # lg.info(result)
@@ -236,28 +233,25 @@ Tower of hanoi
 
 
 ```python
-# Recursive Python function to solve tower of hanoi 
+# Recursive Python function to solve tower of hanoi
 
 
-def TowerOfHanoi(n, from_rod, to_rod, aux_rod): 
-	if n == 0: 
-		return 	
-	TowerOfHanoi(n-1, from_rod, aux_rod, to_rod) 
-	print("Move disk", n, "from rod", from_rod, "to rod", to_rod) 
-	TowerOfHanoi(n-1, aux_rod, to_rod, from_rod) 
+def TowerOfHanoi(n, from_rod, to_rod, aux_rod):
+    if n == 0:
+        return
+    TowerOfHanoi(n - 1, from_rod, aux_rod, to_rod)
+    print("Move disk", n, "from rod", from_rod, "to rod", to_rod)
+    TowerOfHanoi(n - 1, aux_rod, to_rod, from_rod)
 
 
-# Driver code 
+# Driver code
 N = 10
-T =TimerError()
+T = TimerError()
 T.start()
-# A, C, B are the name of rods 
-TowerOfHanoi(N, 'A', 'C', 'B') 
+# A, C, B are the name of rods
+TowerOfHanoi(N, "A", "C", "B")
 end_time = T.elapsed()
 lg.info(f"time take \n {end_time}")
-
-
-
 ```
 
     [32m2024-05-08 15:07:46.819[0m | [1mINFO    [0m | [36m__main__[0m:[36m<module>[0m:[36m19[0m - [1mtime take 
@@ -1291,8 +1285,9 @@ lg.info(f"time take \n {end_time}")
 
 
 ```python
-def Tower_of_Hanoi(n, from_rod , tp_rod , aux_rod):
-    if n: pass
+def Tower_of_Hanoi(n, from_rod, tp_rod, aux_rod):
+    if n:
+        pass
 ```
 
 $$Overall\ time\ =\ O(n^{2})$$
