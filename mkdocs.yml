@@ -24,6 +24,7 @@ nav:
   - week5/prims.md
   - week5/Lecture 5.5 - Minimum Cost Spanning Trees_annotated.md
   - week5/floyd_warshall_5_4.md
+  - week5/kruskal.md
 - week1:
   - week1/exception_handling.md
   - week1/class&object.md
