@@ -112,6 +112,26 @@ def read_yaml_as_dict(path_to_yaml: Path):
         raise e
 
 
+def git_add_and_commit(commit_message):
+    """
+    Adds all changes to the staging area and commits them with the given commit message.
+
+    Args:
+    commit_message (str): The commit message to use for the commit.
+    """
+    try:
+        # Add all changes to the staging area
+        subprocess.run(["git", "add", "."], check=True)
+        logger.info("Changes added to staging area.")
+
+        # Commit the changes with the provided commit message
+        subprocess.run(["git", "commit", "-m", commit_message], check=True)
+        logger.info(f"Changes committed with message: {commit_message}")
+
+    except subprocess.CalledProcessError as e:
+        logger.info(f"An error occurred: {e}")
+
+
 def write_yaml(file_path: Path, data: dict = None):
     """write yaml file from dict
 

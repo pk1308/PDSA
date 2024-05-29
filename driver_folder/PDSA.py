@@ -1,11 +1,10 @@
 import os
-import subprocess
 import sys
 from datetime import datetime
 
 from loguru import logger
-from shared.functions import (create_ipynb, create_md, deploy_mkdocs,
-                              get_git_status_files, update_my_docs)
+from shared.functions import ( create_ipynb,create_md, deploy_mkdocs, get_git_status_files,
+                              git_add_and_commit, update_my_docs,)
 
 
 def custom_time_format(record):
@@ -19,26 +18,6 @@ logger.add(
     colorize=True,
     format="<green>{time:YYYY-MM-DD}</green> | <blue>{level}</blue> | {message}",
 )
-
-
-def git_add_and_commit(commit_message):
-    """
-    Adds all changes to the staging area and commits them with the given commit message.
-
-    Args:
-    commit_message (str): The commit message to use for the commit.
-    """
-    try:
-        # Add all changes to the staging area
-        subprocess.run(["git", "add", "."], check=True)
-        logger.info("Changes added to staging area.")
-
-        # Commit the changes with the provided commit message
-        subprocess.run(["git", "commit", "-m", commit_message], check=True)
-        logger.info(f"Changes committed with message: {commit_message}")
-
-    except subprocess.CalledProcessError as e:
-        logger.info(f"An error occurred: {e}")
 
 
 if __name__ == "__main__":
