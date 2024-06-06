@@ -30,6 +30,7 @@ nav:
   - week1/class&object.md
   - week1/time_it.md
   - week1/Euclid's Algorithm.md
+  - week1/ta_session_06_06.md
 - week2:
   - week2/lec2_3.md
   - week2/lec_summary.md
@@ -60,8 +61,13 @@ nav:
   - week4/Lecture 4.8 - Longest Path in DAGs.md
   - week4/Lecture 4.6 - Introduction to Directed Acyclic Graph (DAG).md
   - week4/Lecture 4.4 - Depth First Search (DFS)_.md
+- artifacts:
+  - artifacts/Algorithms_DASGUPTA.md
 - reference:
   - reference/priya_suggestion.md
+  - reference/book1.md
+  - reference/book2.md
+  - reference/book3.md
 theme:
   name: material
   features:
