@@ -1,0 +1,1 @@
+![Alt text](<../artifacts/Narasimha Karumanchi - Data Structures and Algorithms Made Easy_ Data Structures and Algorithmic Puzzles (2017, CareerMonk Plublications) - libgen.li.pdf>){ type=application/pdf style="min-height:100vh;width:100%" }
