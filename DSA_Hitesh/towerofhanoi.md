@@ -17,25 +17,30 @@ def tower_of_hanoi(N , from_bar , to_bar , aux_bar):
 ```python
 n = 4 
 
-tower_of_hanoi(n , "A", "B" , "C")
+tower_of_hanoi(N=n , from_bar="A",aux_bar= "B" ,to_bar= "C")
 ```
 
-    move disk 1 from bar  A  to_bar C
-    move disk  2  from bar  A  to_bar B
-    move disk 1 from bar  C  to_bar B
-    move disk  3  from bar  A  to_bar C
-    move disk 1 from bar  B  to_bar A
-    move disk  2  from bar  B  to_bar C
-    move disk 1 from bar  A  to_bar C
-    move disk  4  from bar  A  to_bar B
-    move disk 1 from bar  C  to_bar B
-    move disk  2  from bar  C  to_bar A
-    move disk 1 from bar  B  to_bar A
-    move disk  3  from bar  C  to_bar B
-    move disk 1 from bar  A  to_bar C
-    move disk  2  from bar  A  to_bar B
-    move disk 1 from bar  C  to_bar B
+    move disk 1 from bar  A  to_bar B
+    move disk  2  from bar  A  to_bar C
+    move disk 1 from bar  B  to_bar C
+    move disk  3  from bar  A  to_bar B
+    move disk 1 from bar  C  to_bar A
+    move disk  2  from bar  C  to_bar B
+    move disk 1 from bar  A  to_bar B
+    move disk  4  from bar  A  to_bar C
+    move disk 1 from bar  B  to_bar C
+    move disk  2  from bar  B  to_bar A
+    move disk 1 from bar  C  to_bar A
+    move disk  3  from bar  B  to_bar C
+    move disk 1 from bar  A  to_bar B
+    move disk  2  from bar  A  to_bar C
+    move disk 1 from bar  B  to_bar C
 
+
+
+```python
+
+```
 
 
 ```python

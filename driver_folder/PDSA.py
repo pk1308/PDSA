@@ -1,23 +1,8 @@
 import os
-import sys
-from datetime import datetime
 
-from loguru import logger
 from shared.functions import ( create_ipynb,create_md, deploy_mkdocs, get_git_status_files,
                               git_add_and_commit, update_my_docs,)
-
-
-def custom_time_format(record):
-    return datetime.now().strftime("%Y-%m-%d")
-
-
-# Set up the logger with custom format
-logger.remove()  # Remove the default logger
-logger.add(
-    sys.stdout,
-    colorize=True,
-    format="<green>{time:YYYY-MM-DD}</green> | <blue>{level}</blue> | {message}",
-)
+from shared.app_log import logger
 
 
 if __name__ == "__main__":
