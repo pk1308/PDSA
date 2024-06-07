@@ -16,7 +16,7 @@ end_time = T.elapsed()
 print(f"time taken:{end_time}")
 ```
 
-    time taken:1.2756994692608714e-05
+    time taken:3.456299987192324e-05
 
 
 
@@ -35,7 +35,7 @@ end_time = T.elapsed()
 print(f"time taken:{end_time}")
 ```
 
-    time taken:0.35971292899921536
+    time taken:0.7082312540001112
 
 
 
@@ -49,7 +49,7 @@ end_time = T.elapsed()
 print(f"time taken:{end_time}")
 ```
 
-    time taken:0.7846552830014843
+    time taken:1.2863995140000952
 
 
 
@@ -63,7 +63,7 @@ end_time = T.elapsed()
 print(f"time taken:{end_time}")
 ```
 
-    time taken:4.565422638988821
+    time taken:4.889978135000092
 
 
 
@@ -77,7 +77,7 @@ end_time = T.elapsed()
 print(f"time taken:{end_time}")
 ```
 
-    time taken:13.601755273004528
+    time taken:15.133477557999868
 
 
 
