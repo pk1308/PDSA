@@ -114,15 +114,16 @@ last_list
 ```python
 def findLargest(L):
     left , right = 0 , len(L)-1
+    if len(L) ==1:
+        return L[0]
     
     largest = -1 
-    while left <= right:
+    while left < right:
         midpoint = L[(left+right)//2]
-        temp = max(L[left], L[right] , midpoint)  # Assign the maximum value to temp
-        largest = max(largest, temp, midpoint)  # Update largest if temp is greater
+        largest = max(largest, L[left], L[right] , midpoint)  # Update largest if temp is greater
         
-        if midpoint > temp :
-            left = (left+right)//2-1
+        if midpoint > L[left] :
+            left = (left+right)//2+1
         else:
             right = (left+right)//2-1
     return largest
@@ -147,8 +148,20 @@ findLargest(L)
 
 
 ```python
-L =[7 ,8 ,2 ,4 ,5 ,6]
+L =[2 , 4 , 5 ,7 ,9]
 ```
+
+
+```python
+findLargest(L)
+```
+
+
+
+
+    9
+
+
 
 
 ```python
@@ -157,54 +170,142 @@ left , right = 0 , len(L)-1
 
 
 ```python
-L[left:right+1]
+largest = -1 
+```
+
+
+```python
+left , right
 ```
 
 
 
 
-    []
+    (3, 2)
 
 
 
 
 ```python
 midpoint = L[(left+right)//2]
-temp = max(L[left], L[right] , midpoint)  # Assign the maximum value to temp
-largest = max(largest, temp, midpoint)
-```
-
-
-```python
+largest = max(largest, L[left], L[right] , midpoint)  # Update largest if temp is greater
 largest
+        
 ```
 
 
 
 
-    8
+    9
 
 
 
 
 ```python
-midpoint, temp
-```
-
-
-
-
-    (7, 8)
-
-
-
-
-```python
-if midpoint > temp :
-    left = (left+right)//2-1
+if midpoint > L[left] :
+            left = (left+right)//2+1
 else:
     right = (left+right)//2-1
 ```
+
+
+```python
+def selectionsort(L : list) -> list :
+    number_of_elements = len(L)
+    if number_of_elements<= 1:
+        return L
+    for i in range(number_of_elements):
+        index_to_sort = i 
+        for j in range(i+1, number_of_elements):
+            if L[j] < L[index_to_sort]:
+                L[j] , L[index_to_sort] = L[index_to_sort] , L[j]
+    return L
+```
+
+
+```python
+selectionsort(L)
+```
+
+
+
+
+    [2, 4, 5, 7, 9]
+
+
+
+
+```python
+
+```
+
+
+```python
+class MyList:
+    def __init__(self, data):
+        self.data = data
+    
+    def __len__(self):
+        return len(self.data)
+    
+    def __getitem__(self, index):
+        return self.data[index]
+    
+    def swap(self, indexA, other, indexB):
+        if isinstance(other, MyList):
+            self.data[indexA], other.data[indexB] = other.data[indexB], self.data[indexA]
+        else:
+            self.data[indexA], self.data[other] = self.data[other], self.data[indexA]
+```
+
+
+```python
+def mergeInPlace(first_list , second_list):
+    len_of_first , len_of_second = len(first_list) , len(second_list)
+    pointer_first , pointer_second = 0, 0 
+    
+    while pointer_first < len_of_first and pointer_second < len_of_second:
+        if first_list[pointer_first] <= second_list[pointer_second]:
+            pointer_first+=1 
+        else:
+            first_list.swap(pointer_first, second_list, pointer_second)
+        # temp pointer to sorted second list 
+        k = pointer_second
+        while k < len_of_second-1 and second_list[k] > second_list[k+1]:
+            second_list.swap(k, second_list, k+1)
+            k+=1
+        pointer_first+=1
+    return first_list , second_list    
+```
+
+
+```python
+def mergeInPlace(first_list , second_list):
+    len_of_first , len_of_second = len(first_list) , len(second_list)
+    for first_index in range(len_of_first):
+        for second_index in range(len_of_second):
+            if first_list[first_index] > second_list[second_index]:
+                first_list.swap(first_index, second_list, second_index)
+    for second_index in range(len_of_second):
+        for j in range(second_index+1, len_of_second):
+            if second_list[second_index] > second_list[j]:
+                second_list.swap(second_index, second_list, j)
+    return first_list , second_list    
+```
+
+
+```python
+A = MyList([2,4 ,6 ,9 ,13 ,15])
+B = MyList([1 ,3 ,5 ,10])
+mergeInPlace(A, B)
+print(A.data)  # Output: [1, 2, 3]
+print(B.data)  # Output: [4, 5, 6]
+
+```
+
+    [1, 2, 3, 4, 5, 6]
+    [9, 10, 13, 15]
+
 
 
 ```python
