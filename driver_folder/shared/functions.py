@@ -185,21 +185,20 @@ def update_my_docs(folder_path="./docs"):
     write_yaml(file_path, yaml_file)
 
 
-def summarize(file_path, context_base="summarize the following text"):
+def summarize(file_path , context_base = "summarize the following not less than 2000 words lec slide" ):
     """_summary_
 
     Args:
-        context_base:
         file_path (_type_): _description_
 
     Returns:
         _type_: _description_
     """
     pages = load_pdf_from_file(file_path=file_path)
-
+    logger.info(f"loaded {file_path}")
     # Setup the Google Generative AI model and invoke it using a human-friendly prompt
     llm = ChatGoogleGenerativeAI(model="gemini-pro")
-    result = llm.invoke(f"{context_base}: \n {pages}:")
+    result = llm.invoke(f"{context_base}: \n {pages}")
 
     return result.content
 
