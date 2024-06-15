@@ -46,7 +46,7 @@ end_time = T.elapsed()
 logger.info(f"time taken:{end_time}")
 ```
 
-    [1mINFO[0m | [34mtime taken:2.2756998077966273e-05[0m
+    [1mINFO[0m | [34mtime taken:1.1410999832150992e-05[0m
 
 
 
@@ -98,18 +98,18 @@ def quicksort(L: list, lower_index: int, upper_index: int):
 
     for i in range(lower_index + 1, upper_index):
         if L[i] > pivot:
-            L[i], L[upper] = L[upper], L[i]
             upper += 1
         else:
             L[i], L[lower] = L[lower], L[i]
             lower += 1
+            upper +=1
 
     # Move pivot between lower and upper
     L[lower - 1], L[lower_index] = L[lower_index], L[lower - 1]
 
     # Recursive calls
     quicksort(L, lower_index=lower_index, upper_index=lower - 1)
-    quicksort(L, lower_index=lower, upper_index=upper_index)
+    quicksort(L, lower_index=lower, upper_index=upper)
 
     return L
 ```
@@ -131,7 +131,7 @@ end_time = T.elapsed()
 logger.info(f"time taken:{end_time}")
 ```
 
-    [1mINFO[0m | [34mtime taken:0.6071723460045177[0m
+    [1mINFO[0m | [34mtime taken:2.749621214000399[0m
 
 
 

@@ -7,9 +7,12 @@ nav:
 - Home:
   - index.md
 - week3:
+  - week3/rev.md
   - week3/list_implementation_3_6.md
   - week3/quick_sort_3_1.md
+  - week3/ppa.md
   - week3/listsinpython3_7.md
+  - week3/3_5lec.md
   - week3/quicksort_anaylsis_3.2.md
   - week3/list&dictionary_imp_3_9.md
 - week5:
@@ -35,7 +38,9 @@ nav:
   - week1/Euclid's Algorithm.md
   - week1/ta_session_06_06.md
 - week2:
+  - week2/rev.md
   - week2/lec2_3.md
+  - week2/ta_session_sat.md
   - week2/lec_summary.md
   - week2/week summary.md
   - week2/lec2_2.md
