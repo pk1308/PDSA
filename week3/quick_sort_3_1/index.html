@@ -16,7 +16,7 @@
         <link rel="prev" href="../list_implementation_3_6/">
       
       
-        <link rel="next" href="../listsinpython3_7/">
+        <link rel="next" href="../ppa/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -241,7 +241,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../list_implementation_3_6/" class="md-tabs__link">
+        <a href="../rev/" class="md-tabs__link">
           
   
   week3
@@ -313,7 +313,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../week2/lec2_3/" class="md-tabs__link">
+        <a href="../../week2/rev/" class="md-tabs__link">
           
   
   week2
@@ -545,6 +545,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../rev/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Sort Algo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../list_implementation_3_6/" class="md-nav__link">
         
   
@@ -597,11 +618,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../ppa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ppa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../listsinpython3_7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Listsinpython3 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_5lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 5lec
   </span>
   
 
@@ -1226,11 +1289,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../week2/rev/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rev
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../week2/lec2_3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Lec2 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week2/ta_session_sat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ta session sat
   </span>
   
 
@@ -2229,7 +2334,7 @@
 <a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="n">end_time</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">elapsed</span><span class="p">()</span>
 <a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"time taken:</span><span class="si">{</span><span class="n">end_time</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>[1mINFO[0m | [34mtime taken:2.2756998077966273e-05[0m
+<div class="highlight"><pre><span></span><code>[1mINFO[0m | [34mtime taken:1.1410999832150992e-05[0m
 </code></pre></div>
 <p><strong>Merge needs to create a new list to hold the merged elements</strong>
 - No obvious way to efficiently merge two lists in place
@@ -2273,18 +2378,18 @@ T( n) \ =\ O( nlogn)
 <a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lower_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">upper_index</span><span class="p">):</span>
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">:</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">upper</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">upper</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>            <span class="n">upper</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">lower</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">lower</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>            <span class="n">lower</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            <span class="n">upper</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">lower</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">lower</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>            <span class="n">lower</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>            <span class="n">upper</span> <span class="o">+=</span><span class="mi">1</span>
 <a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
 <a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>    <span class="c1"># Move pivot between lower and upper</span>
 <a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    <span class="n">L</span><span class="p">[</span><span class="n">lower</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">lower_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">lower_index</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">lower</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 <a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
 <a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    <span class="c1"># Recursive calls</span>
 <a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    <span class="n">quicksort</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">lower_index</span><span class="o">=</span><span class="n">lower_index</span><span class="p">,</span> <span class="n">upper_index</span><span class="o">=</span><span class="n">lower</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    <span class="n">quicksort</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">lower_index</span><span class="o">=</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper_index</span><span class="o">=</span><span class="n">upper_index</span><span class="p">)</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    <span class="n">quicksort</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">lower_index</span><span class="o">=</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper_index</span><span class="o">=</span><span class="n">upper</span><span class="p">)</span>
 <a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
 <a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>    <span class="k">return</span> <span class="n">L</span>
 </code></pre></div>
@@ -2298,7 +2403,7 @@ T( n) \ =\ O( nlogn)
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">end_time</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">elapsed</span><span class="p">()</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"time taken:</span><span class="si">{</span><span class="n">end_time</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>[1mINFO[0m | [34mtime taken:0.6071723460045177[0m
+<div class="highlight"><pre><span></span><code>[1mINFO[0m | [34mtime taken:2.749621214000399[0m
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
 </code></pre></div></div>
