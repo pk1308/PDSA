@@ -1,12 +1,27 @@
 # Lecture 4.6 - Introduction to Directed Acyclic Graph (DAG).pdf (PDF file)
 **Summary**
-Directed Acyclic Graphs (DAGs) are graphical representations of tasks with dependencies. They are used to organize and schedule tasks, ensuring that tasks that must be completed before others are done first.
+## Directed Acyclic Graphs (DAGs)
 
-DAGs consist of vertices (tasks) and edges (dependencies). An arrow from vertex A to vertex B indicates that task A must be completed before task B can begin.
+### Introduction
 
-Typical questions addressed using DAGs include scheduling tasks while respecting dependencies and estimating the time required to complete all tasks.
+**Directed Acyclic Graphs (DAGs)** are a specialized type of graph used to represent dependencies or constraints in a system. Unlike their more general counterparts, directed graphs, DAGs do not contain any cycles or loops, meaning that it is impossible to move from one node to another while staying on the same edge.
 
-In a DAG, topological sorting finds a valid ordering of tasks, and finding the longest path determines the longest sequence of dependent tasks, providing an estimate of the time required to complete the project.
-**Lec file**
-# Lecture 4.6 - Introduction to Directed Acyclic Graph (DAG).pdf (PDF file)
-![Alt text](<./Lecture 4.6 - Introduction to Directed Acyclic Graph (DAG).pdf>){ type=application/pdf style="min-height:100vh;width:100%" }
+### Representing Dependencies as a DAG
+
+DAGs are commonly used to represent constraints or dependencies between tasks or events. Each node in the graph represents a task or event, while the edges represent the dependencies between them. If task A must be completed before task B can start, an edge will be drawn from A to B.
+
+### Scheduling Tasks with DAGs
+
+One of the main applications of DAGs is scheduling tasks while respecting the dependencies between them. A valid schedule is one that follows the order specified by the DAG, ensuring that all dependencies are met.
+
+### Topological Sorting
+
+Topological sorting is a technique used to find an ordering of the nodes in a DAG that respects the dependencies between them. This ordering can be used to create a schedule or to determine the overall duration of a project.
+
+### Longest Path in a DAG
+
+In some cases, we are interested in finding the longest path in a DAG. This represents the critical path, the sequence of tasks that determines the overall duration of the project.
+
+### Summary
+
+DAGs are a powerful tool for representing dependencies and constraints in a system. They are used in various applications, including scheduling, task management, and project planning. Key problems that can be solved using DAGs include topological sorting and finding the longest path.

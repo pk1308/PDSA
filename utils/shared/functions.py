@@ -226,16 +226,16 @@ def create_md(files_to_create):
                     f.write("**Summary**\n")
                     f.write(data_to_write)
                     f.write("\n")
-                    f.write("**Lec file**\n")
-                    f.write(f"# {os.path.basename(file_to)} (PDF file)\n")
-                    path_ = os.path.basename(file_to)
-                    time.sleep(60)
+                    # f.write("**Lec file**\n")
+                    # f.write(f"# {os.path.basename(file_to)} (PDF file)\n")
+                    # path_ = os.path.basename(file_to)
+                    # time.sleep(60)
 
-                    data = (
-                        f"![Alt text](<./{path_}>)"
-                        + '{ type=application/pdf style="min-height:100vh;width:100%" }'
-                    )
-                    f.write(data)
+                    # data = (
+                    #     f"![Alt text](<./{path_}>)"
+                    #     + '{ type=application/pdf style="min-height:100vh;width:100%" }'
+                    # )
+                    # f.write(data)
 
             except Exception as e:
                 logger.info(f"Error creating {new_filename}: {e}")

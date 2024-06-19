@@ -1,29 +1,62 @@
 # Lecture 4.1 - Introduction to graphs_.pdf (PDF file)
 **Summary**
-**Graphs**
+## Introduction to Graphs
 
-Graphs are used to visually represent relationships between entities. Entities are represented as vertices (nodes), and relationships are represented as edges. Graphs can be directed (edges have a specific direction) or undirected (edges do not have a specific direction).
+**Definition:** A graph is a data structure that represents a set of objects (called vertices or nodes) and a set of relationships (called edges) between those objects.
 
-**Paths and Reachability**
+**Components:**
+* **Vertices:** Entities or objects of interest.
+* **Edges:** Connections or relationships between vertices.
 
-A path is a sequence of connected edges. Reachability determines if there is a path from one vertex to another.
+**Types of Graphs:**
 
-**Graph Applications**
+* **Directed graphs:** Edges have a direction, indicating a one-way relationship between vertices.
+* **Undirected graphs:** Edges do not have a direction, indicating a bidirectional relationship between vertices.
 
-Graphs have numerous practical applications, including:
+## Paths and Reachability
 
-* **Map Colouring:** Determining the minimum number of colors needed to colour a map so that adjacent areas have different colors.
-* **Graph Colouring:** Assigning colors to vertices such that adjacent vertices have different colors.
-* **Vertex Cover:** Finding the minimum set of vertices that cover all edges.
-* **Independent Set:** Identifying a set of vertices where no two vertices are connected by an edge.
-* **Matching:** Finding a set of non-overlapping edges that connect pairs of vertices.
+**Path:** A sequence of vertices connected by edges.
 
-**Concept Overview**
+**Reachability:** Determining whether there exists a path from one vertex to another in a directed graph.
 
-* Graphs represent relationships between entities.
-* Directed graphs have edges with specific directions, while undirected graphs do not.
-* Reachability is used to determine if one vertex can reach another through a path.
-* Graph applications include map colouring, graph colouring, vertex cover, independent set, and matching.
+## Graph Applications
+
+Graphs are widely used in various applications, including:
+
+* **Map coloring:** Determining the minimum number of colors needed to color a map without adjacent regions having the same color.
+* **Vertex cover:** Finding the minimum number of vertices that cover all edges in a graph.
+* **Independent set:** Identifying a subset of vertices that are not connected by any edges.
+* **Matching:** Assigning pairs of vertices (e.g., people, projects) based on compatibility or availability.
+
+## Graph Representation in Python
+
+In Python, graphs can be represented using various data structures, including:
+
+* **Adjacency list:** A dictionary where each key represents a vertex and the corresponding value is a list of adjacent vertices.
+* **Adjacency matrix:** A 2D array where the rows and columns represent vertices, and a non-zero value indicates an edge between the corresponding vertices.
+* **NetworkX library:** A dedicated library for graph manipulation and analysis.
+
+## Graph Traversal and Search
+
+**Depth-first search (DFS):** Traverses a graph by following edges until a dead end is reached, then backtracking to explore other paths.
+
+**Breadth-first search (BFS):** Traverses a graph by visiting all vertices at the same level before moving to the next level.
+
+## Minimum Spanning Tree
+
+A minimum spanning tree is a subgraph of a connected graph that includes all vertices but has the minimum possible total edge weight.
+
+## Shortest Path
+
+Finding the shortest path between two vertices in a graph is a fundamental graph problem with numerous applications, such as route planning and network optimization.
+
+## Graph Optimization Problems
+
+Graphs can also be used to solve optimization problems, such as:
+
+* **Maximum flow:** Determining the maximum amount of flow that can pass through a network.
+* **Minimum cut:** Partitioning a graph into two disjoint sets while minimizing the number of edges between them.
+* **Traveling salesman problem:** Finding the shortest possible path that visits a set of cities and returns to the starting city.
 **Lec file**
 # Lecture 4.1 - Introduction to graphs_.pdf (PDF file)
 ![Alt text](<./Lecture 4.1 - Introduction to graphs_.pdf>){ type=application/pdf style="min-height:100vh;width:100%" }
