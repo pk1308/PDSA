@@ -20,3 +20,9 @@ def summarize(
     result = llm.invoke(f"{context_base}: \n {pages}:")
 
     return result.content
+
+def ask_question( context= ""):
+    llm = ChatGoogleGenerativeAI(model="gemini-pro")
+    result = llm.invoke(context)
+
+    return result.content

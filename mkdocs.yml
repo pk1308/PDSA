@@ -61,17 +61,17 @@ nav:
   - week4/DFS_4_4.md
   - week4/Lecture 4.3 - Breadth First Search (BFS)_.md
   - week4/BFS_4_3.md
+  - week4/DFS.md
   - week4/Lecture 4.1 - Introduction to graphs_annotated.md
   - week4/longest_path4_8.md
   - week4/redo.md
   - week4/Lecture 4.7 - Topological Sorting.md
   - week4/Lecture 4.5 - Applications of BFS and DFS.md
   - week4/Lecture 4.1 - Introduction to graphs_.md
-  - week4/Lecture 4.4 - Depth First Search (DFS)_T.md
-  - week4/Lecture 4.3 - Breadth First Search (BFS)_T.md
   - week4/Lecture 4.2 - Representing Graphs_.md
   - week4/represntinggraph4.2.md
   - week4/Lecture 4.8 - Longest Path in DAGs.md
+  - week4/BFS_4_3 _.md
   - week4/Lecture 4.6 - Introduction to Directed Acyclic Graph (DAG).md
   - week4/Lecture 4.4 - Depth First Search (DFS)_.md
 - artifacts:
