@@ -1798,6 +1798,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DFS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Lecture%204.1%20-%20Introduction%20to%20graphs_annotated/" class="md-nav__link">
         
   
@@ -1924,48 +1945,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29_T/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 4.4 - Depth First Search (DFS)_T.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29_T/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 4.3 - Breadth First Search (BFS)_T.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Lecture%204.2%20-%20Representing%20Graphs_/" class="md-nav__link">
         
   
@@ -2013,6 +1992,27 @@
   
   <span class="md-ellipsis">
     Lecture 4.8 - Longest Path in DAGs.pdf (PDF file)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BFS_4_3%20_/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFS 4 3  
   </span>
   
 
@@ -2290,20 +2290,340 @@
 
 <div><h1 id="lecture-43-breadth-first-search-bfs_pdf-pdf-file">Lecture 4.3 - Breadth First Search (BFS)_.pdf (PDF file)</h1>
 <p><strong>Summary</strong>
-<strong>Summary of Breadth First Search (BFS):</strong></p>
-<p>BFS is a systematic technique for exploring a graph level by level. It involves:
-- Marking visited vertices
-- Maintaining a queue of explored but unvisited vertices
-- Complexity: O(n²) using an adjacency matrix or O(m + n) using an adjacency list</p>
-<p><strong>Enhancing BFS:</strong>
-- Maintain parent information to recover the path to reachable vertices.
-- Record distance (levels) to identify the shortest path in terms of edge count.</p>
-<p><strong>Generalizations:</strong>
-- Edges can have weights (costs).
-- In weighted graphs, shortest paths are determined by cost, not edge count.
-<strong>Lec file</strong></p>
-<h1 id="lecture-43-breadth-first-search-bfs_pdf-pdf-file_1">Lecture 4.3 - Breadth First Search (BFS)_.pdf (PDF file)</h1>
-<p><embed alt="Alt text" src="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29_.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
+<strong>Breadth First Search</strong></p>
+<p><strong>Reachability in a graph</strong>
+- Mark source vertex as reachable
+- Systematically mark neighbours of marked
+vertices
+- Stop when target becomes marked</p>
+<p><strong>Choose an appropriate representation</strong>
+- Adjacency matrix
+- Adjacency list</p>
+<p><strong>Strategies for systematic exploration</strong>
+- Breadth first — propagate marks in
+“layers”
+- Depth first — explore a path till it dies
+out, then backtrack</p>
+<p><strong>Breadth First Search (BFS)</strong>
+- Explore the graph level by level
+- First visit vertices one step away
+- Then two steps away
+- . . .
+- Each visited vertex has to be explored</p>
+<p><strong>Breadth first search (BFS)</strong>
+- Assume V = {0, 1, . . . , n − 1}
+-visited : V → {True, False} tells us
+whether v ∈ V has been visited
+-Initially, visited(v) = False for all v ∈ V
+-Maintain a sequence of visited vertices yet
+to be explored
+-A queue — first in, first out</p>
+<p><strong>Exploring a vertex i</strong>
+- For each edge (i, j), if visited(j) is False,
+- Set visited(j) to True
+- Append j to the queue</p>
+<p><strong>BFS . . .</strong>
+-Assume V = {0, 1, . . . , n − 1}
+-visited : V → {True, False} tells us
+whether v ∈ V has been visited
+-Initially, visited(v) = False for all v ∈ V
+-Maintain a sequence of visited vertices yet
+to be explored
+-A queue — first in, first out
+-Exploring a vertex i
+- For each edge (i, j), if visited(j) is False,
+- Set visited(j) to True
+- Append j to the queue</p>
+<p><strong>BFS . . .</strong>
+- q = Queue()
+-for i in range(3):
+- q.addq(i)
+-print(q)
+-print(q.isempty())
+-for j in range(3):
+- print(q.delq(),q)
+-print(q.isempty())</p>
+<p><strong>BFS . . .</strong>
+-Initially
+-visited(v) = False for all v ∈ V
+-Queue of vertices to be explored is empty
+-Start BFS from vertex j
+-Set visited(j) = True
+-Add j to the queue
+-Remove and explore vertex i at head of
+queue
+-For each edge (i, j), if visited(j) is False,
+- Set visited(j) to True
+- Append j to the queue
+-Stop when queue is empty</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 False
+1 False
+2 False
+3 False
+4 False
+5 False
+6 False
+7 False
+8 False
+9 False
+-To explore queue
+-Mark 7 and add to queue</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 False
+2 False
+3 False
+4 False
+5 False
+6 False
+7 True
+8 False
+9 False
+-To explore queue
+-7</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 False
+2 False
+3 False
+4 True
+5 True
+6 False
+7 True
+8 True
+9 False
+-To explore queue
+-4 5 8</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 False
+2 False
+3 True
+4 True
+5 True
+6 False
+7 True
+8 True
+9 False
+-To explore queue
+-5 8 0 3</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 False
+2 False
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 False
+-To explore queue
+-8 0 3 6</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 True
+2 True
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 False
+-To explore queue
+-0 3 6 9</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 True
+2 True
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 True
+-To explore queue
+-3 6 9 1 2</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 True
+2 True
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 True
+-To explore queue
+-6 9 1 2</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 True
+2 True
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 True
+-To explore queue
+-9 1 2</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 True
+2 True
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 True
+-To explore queue
+-1 2</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 True
+2 True
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 True
+-To explore queue
+-2</p>
+<p><strong>BFS from vertex 7</strong>
+-Visited
+0 True
+1 True
+2 True
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 True
+-To explore queue</p>
+<p><strong>Complexity of BFS</strong>
+-G = (V, E)
+-|V| = n
+-|E| = m
+-If G is connected, m can vary from
+n − 1 to n(n − 1)/2
+-In BFS, each reachable vertex is
+processed exactly once
+-Visit the vertex: add to queue
+-Explore the vertex: remove from queue
+-Visit and explore at most n vertices
+-Exploring a vertex
+-Check all outgoing edges
+-How long does this take?</p>
+<p><strong>Complexity of BFS</strong>
+-G = (V, E)
+-|V| = n
+-|E| = m
+-If G is connected, m can vary from
+n − 1 to n(n − 1)/2
+-In BFS, each reachable vertex is
+processed exactly once
+-Visit the vertex: add to queue
+-Explore the vertex: remove from queue
+-Visit and explore at most n vertices
+-Exploring a vertex
+-Check all outgoing edges
+-How long does this take?</p>
+<p><strong>Complexity of BFS</strong>
+-G = (V, E)
+-|V| = n
+-|E| = m
+-If G is connected, m can vary from
+n − 1 to n(n − 1)/2
+-In BFS, each reachable vertex is
+processed exactly once
+-Visit the vertex: add to queue
+-Explore the vertex: remove from queue
+-Visit and explore at most n vertices
+-Exploring a vertex
+-Check all outgoing edges
+-How long does this take?</p>
+<p><strong>Complexity of BFS</strong>
+-Adjacency matrix
+-To explore i, scan neighbours(i)
+-Look up n entries in row i, regardless of
+degree(i)</p>
+<p><strong>Complexity of BFS</strong>
+-Adjacency matrix
+-To explore i, scan neighbours(i)
+-Look up n entries in row i, regardless of
+degree(i)
+-Adjacency list
+-List neighbours(i) is directly available
+-Time to explore i is degree(i)
+-Degree varies across vertices</p>
+<p><strong>Complexity of BFS</strong>
+-BFS with adjacency matrix
+-n steps to initialize each vertex
+-n steps to explore each vertex
+-Overall time is O(n\r\n2\r\n)</p>
+<p><strong>Complexity of BFS</strong>
+-BFS with adjacency matrix
+-n steps to initialize each vertex
+-n steps to explore each vertex
+-Overall time is O(n\r\n2\r\n)
+-BFS with adjacency list
+-n steps to initialize each vertex
+-2m steps (sum of degrees) to explore all
+vertices
+-An example of amortized analysis
+-Overall time is O(n + m)</p>
+<p><strong>Complexity of BFS</strong>
+-If m \x1c n\r\n2\r\n, working with adjacency lists
+is much more efficient
+-This is why we treat m and n as
+separate parameters
+-For graphs, O(m + n) is typically the
+best possible complexity
+-Need to see each each vertex and edge
+at least once
+-Linear time</p>
+<p><strong>Enhancing BFS to record paths</strong>
+-If BFS from i sets visited(k) = True, we
+know that k is reachable from i
+-How do we recover a path from i to k?
+-visited(k) was set to True when exploring
+some vertex j
+-Record parent(k) = j
+-From k, follow parent links to trace back
+a path to i</p>
+<p><strong>Enhancing BFS to record paths</strong>
+-If BFS from i sets visited(k) = True, we
+know that k is reachable from i
+-How do we recover a path from i to k?
+-visited(k) was set to True when exploring
+some vertex j
+-Record parent(k) = j
+-From k, follow parent links to trace back
+a path to i</p>
+<p>**</p></div>
 
 
 

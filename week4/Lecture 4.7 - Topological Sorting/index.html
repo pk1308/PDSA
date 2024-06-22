@@ -1788,6 +1788,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DFS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Lecture%204.1%20-%20Introduction%20to%20graphs_annotated/" class="md-nav__link">
         
   
@@ -1924,48 +1945,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29_T/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 4.4 - Depth First Search (DFS)_T.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29_T/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 4.3 - Breadth First Search (BFS)_T.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Lecture%204.2%20-%20Representing%20Graphs_/" class="md-nav__link">
         
   
@@ -2013,6 +1992,27 @@
   
   <span class="md-ellipsis">
     Lecture 4.8 - Longest Path in DAGs.pdf (PDF file)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BFS_4_3%20_/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFS 4 3  
   </span>
   
 
@@ -2290,28 +2290,54 @@
 
 <div><h1 id="lecture-47-topological-sortingpdf-pdf-file">Lecture 4.7 - Topological Sorting.pdf (PDF file)</h1>
 <p><strong>Summary</strong>
-Topological sorting is a technique used to organize a set of tasks or activities with dependencies into a sequence that respects those dependencies. It is particularly useful in situations where tasks must be completed in a specific order to avoid conflicts or errors.</p>
-<p>Key concepts in topological sorting include:</p>
+<strong>Topological Sorting</strong></p>
+<p>Topological sorting is a technique used to order the vertices of a directed acyclic graph (DAG) in a way that respects the dependencies between the vertices. A DAG is a directed graph with no directed cycles, meaning that there is no path from any vertex back to itself.</p>
+<p><strong>Applications of Topological Sorting</strong></p>
+<p>Topological sorting has many applications in computer science, including:</p>
+<ul>
+<li>Scheduling tasks that have dependencies</li>
+<li>Finding the order of compilation for a set of source files</li>
+<li>Determining the order of execution for a set of instructions in a program</li>
+<li>Resolving conflicts in version control systems</li>
+</ul>
+<p><strong>Algorithm for Topological Sorting</strong></p>
+<p>There are several different algorithms for performing topological sorting. One common algorithm works as follows:</p>
 <ol>
-<li>
-<p>Directed Acyclic Graphs (DAGs): Topological sorting is applicable to directed acyclic graphs (DAGs), which are graphs that contain no cycles, meaning there is no path from any vertex back to itself.</p>
-</li>
-<li>
-<p>Indegree: Indegree refers to the number of incoming edges into a vertex in a directed graph.</p>
-</li>
-<li>
-<p>Topological Sort: A topological sort is a linear arrangement of vertices in a graph that preserves the dependencies between the vertices.</p>
-</li>
-<li>
-<p>Algorithm: The topological sorting algorithm works by iteratively identifying vertices with an indegree of 0 and removing them from the graph. The removed vertices are placed in the topological order. This process is repeated until all vertices have been listed.</p>
-</li>
-<li>
-<p>Complexity: The complexity of the topological sorting algorithm using an adjacency matrix is O(n^2), where n represents the number of vertices in the graph. However, using an adjacency list, the complexity can be reduced to O(m + n), where m represents the number of edges in the graph.
-<strong>Lec file</strong></p>
-</li>
+<li>Start with an empty list of sorted vertices.</li>
+<li>Find a vertex with no incoming edges (i.e., a vertex with an indegree of 0).</li>
+<li>Add the vertex to the sorted list.</li>
+<li>Delete the vertex and all of its outgoing edges from the graph.</li>
+<li>Repeat steps 2-4 until all vertices have been added to the sorted list.</li>
 </ol>
-<h1 id="lecture-47-topological-sortingpdf-pdf-file_1">Lecture 4.7 - Topological Sorting.pdf (PDF file)</h1>
-<p><embed alt="Alt text" src="../Lecture%204.7%20-%20Topological%20Sorting.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
+<p><strong>Complexity of Topological Sorting</strong></p>
+<p>The time complexity of topological sorting is O(V + E), where V is the number of vertices in the graph and E is the number of edges.</p>
+<p><strong>Proof of Correctness</strong></p>
+<p>The topological sorting algorithm is correct because it maintains the following invariant:</p>
+<ul>
+<li>The sorted list contains a subset of the vertices in the graph.</li>
+<li>The vertices in the sorted list are ordered in such a way that there are no edges from any vertex in the sorted list to any vertex that is not in the sorted list.</li>
+</ul>
+<p>This invariant is established by the following steps in the algorithm:</p>
+<ul>
+<li>When a vertex with no incoming edges is added to the sorted list, it is added to the end of the list. This ensures that there are no edges from any vertex in the sorted list to the newly added vertex.</li>
+<li>When a vertex is deleted from the graph, all of its outgoing edges are also deleted. This ensures that there are no edges from any vertex in the sorted list to any vertex that is not in the sorted list.</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>Consider the following DAG:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>A -&gt; B
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>B -&gt; C
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>C -&gt; D
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>D -&gt; E
+</code></pre></div>
+<p>The following is a topological sort of this DAG:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[A, B, C, D, E]
+</code></pre></div>
+<p><strong>Additional Notes</strong></p>
+<ul>
+<li>Topological sorting is not unique. There may be multiple different topological sorts of the same DAG.</li>
+<li>The choice of which vertex to add to the sorted list in step 2 of the algorithm is arbitrary. Any vertex with an indegree of 0 can be added.</li>
+<li>Topological sorting can be used to detect cycles in a directed graph. If the algorithm is unable to find a vertex with an indegree of 0, then the graph contains a cycle.</li>
+</ul></div>
 
 
 

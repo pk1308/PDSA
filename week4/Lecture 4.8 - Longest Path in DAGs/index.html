@@ -16,7 +16,7 @@
         <link rel="prev" href="../represntinggraph4.2/">
       
       
-        <link rel="next" href="../Lecture%204.6%20-%20Introduction%20to%20Directed%20Acyclic%20Graph%20%28DAG%29/">
+        <link rel="next" href="../BFS_4_3%20_/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -1788,6 +1788,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DFS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Lecture%204.1%20-%20Introduction%20to%20graphs_annotated/" class="md-nav__link">
         
   
@@ -1914,48 +1935,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29_T/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 4.4 - Depth First Search (DFS)_T.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29_T/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 4.3 - Breadth First Search (BFS)_T.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Lecture%204.2%20-%20Representing%20Graphs_/" class="md-nav__link">
         
   
@@ -2007,6 +1986,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lecture 4.8 - Longest Path in DAGs.pdf (PDF file)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2017,6 +2007,73 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#longest-paths-in-dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Longest Paths in DAGs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-longest-paths-in-dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of Longest Paths in DAGs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BFS_4_3%20_/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFS 4 3  
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2289,11 +2346,105 @@
 
 
 <div><h1 id="lecture-48-longest-path-in-dagspdf-pdf-file">Lecture 4.8 - Longest Path in DAGs.pdf (PDF file)</h1>
-<p><strong>Summary</strong>
-Directed Acyclic Graphs (DAGs) are graphs without directed cycles. Topological sorting provides a feasible schedule by enumerating vertices from the graph with no incoming edges to vertices with the highest number of incoming edges. The longest path in a DAG can be found by iterating through the vertices in topological order and checking if there is a longer path to each vertex from its incoming neighbors. The longest path problem in general graphs, however, is more difficult, and the best-known strategy involves enumerating all possible paths.
-<strong>Lec file</strong></p>
-<h1 id="lecture-48-longest-path-in-dagspdf-pdf-file_1">Lecture 4.8 - Longest Path in DAGs.pdf (PDF file)</h1>
-<p><embed alt="Alt text" src="../Lecture%204.8%20-%20Longest%20Path%20in%20DAGs.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
+<p><strong>Summary</strong></p>
+<h2 id="longest-paths-in-dags">Longest Paths in DAGs</h2>
+<p>Directed acyclic graphs (DAGs) are a special type of graph that does not contain any cycles. This makes them a natural way to representdependencies, such as in a prerequisite graph or a job dependency graph.</p>
+<p>One important problem that arises in the context of DAGs is finding the longest path from a given source vertex to a given destination vertex. The longest path problem can be used to determine the minimum number of steps required to complete a task, or the longest possible sequence of events that can occur in a system.</p>
+<p><strong>Topological sorting</strong> is an algorithm that can be used to find a linear ordering of the vertices in a DAG. This ordering is such that, for any edge (u, v) in the DAG, u comes before v in the ordering. Topological sorting can be used to find the longest path in a DAG by starting at the source vertex and following the edges in the topological order. The longest path will be the path that ends at the destination vertex.</p>
+<p>The following pseudocode implements a topological sort algorithm:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>def topological_sort(G):
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  """
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Perform topological sort on a DAG.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  Args:
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    G: A DAG.
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  Returns:
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    A list of vertices in topological order.
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  """
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  # Initialize a stack to store the vertices.
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  stack = []
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  # Initialize a set to store the visited vertices.
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  visited = set()
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  # Iterate over the vertices in the graph.
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  for v in G.vertices:
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    # If the vertex has not been visited, perform a topological sort on it.
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    if v not in visited:
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>      topological_sort_helper(v, stack, visited)
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  # Return the stack.
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  return stack
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>def topological_sort_helper(v, stack, visited):
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>  """
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>  Helper function for topological sort.
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>  Args:
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    v: The vertex to perform topological sort on.
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    stack: The stack to store the vertices.
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    visited: The set to store the visited vertices.
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>  """
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>  # Mark the vertex as visited.
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>  visited.add(v)
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>  # Iterate over the edges in the graph.
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>  for (v, w) in G.edges:
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    # If the edge has not been visited, perform a topological sort on it.
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    if (v, w) not in visited:
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>      topological_sort_helper(w, stack, visited)
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>  # Push the vertex onto the stack.
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>  stack.append(v)
+</code></pre></div>
+<p>Once the topological sort has been performed, the longest path can be found by starting at the source vertex and following the edges in the topological order. The longest path will be the path that ends at the destination vertex.</p>
+<p>The following pseudocode implements an algorithm to find the longest path in a DAG:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>def longest_path(G, source, destination):
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  """
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  Find the longest path from a source vertex to a destination vertex in a DAG.
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  Args:
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    G: A DAG.
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    source: The source vertex.
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    destination: The destination vertex.
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  Returns:
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    The length of the longest path.
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  """
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  # Perform topological sort on the graph.
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>  topological_order = topological_sort(G)
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  # Initialize a dictionary to store the longest paths.
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  longest_paths = {}
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  # Iterate over the vertices in the topological order.
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>  for v in topological_order:
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    # If the vertex is the source vertex, set the longest path to 0.
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    if v == source:
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>      longest_paths[v] = 0
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    # Otherwise, iterate over the edges in the graph.
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>    else:
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>      longest_paths[v] = max([longest_paths[u] + 1 for (u, v) in G.edges if u in longest_paths])
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>  # Return the longest path to the destination vertex.
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>  return longest_paths[destination]
+</code></pre></div>
+<p>The time complexity of the longest path algorithm is O(m + n), where m is the number of edges in the DAG and n is the number of vertices in the DAG.</p>
+<h2 id="applications-of-longest-paths-in-dags">Applications of Longest Paths in DAGs</h2>
+<p>The longest path problem has a number of applications in computer science. Some of these applications include:</p>
+<ul>
+<li><strong>Scheduling:</strong> The longest path problem can be used to find the minimum number of steps required to complete a task. This can be used to schedule tasks in a way that minimizes the overall completion time.</li>
+<li><strong>Job dependency:</strong> The longest path problem can be used to find the longest possible sequence of events that can occur in a system. This can be used to identify potential bottlenecks in the system and to improve the system's performance.</li>
+<li><strong>Critical path analysis:</strong> The longest path problem can be used to find the critical path in a project. The critical path is the sequence of tasks that must be completed on time in order for the project to be completed on time.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The longest path problem is a fundamental problem in computer science. It has a number of applications in scheduling, job dependency, and critical path analysis. There are a number of algorithms that can be used to solve the longest path problem, including the topological sort algorithm and the longest path algorithm.</p></div>
 
 
 

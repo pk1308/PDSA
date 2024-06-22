@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="../Lecture%204.8%20-%20Longest%20Path%20in%20DAGs/">
+        <link rel="prev" href="../BFS_4_3%20_/">
       
       
         <link rel="next" href="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29_/">
@@ -1788,6 +1788,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DFS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Lecture%204.1%20-%20Introduction%20to%20graphs_annotated/" class="md-nav__link">
         
   
@@ -1914,48 +1935,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29_T/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 4.4 - Depth First Search (DFS)_T.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29_T/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 4.3 - Breadth First Search (BFS)_T.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Lecture%204.2%20-%20Representing%20Graphs_/" class="md-nav__link">
         
   
@@ -2016,6 +1995,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../BFS_4_3%20_/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFS 4 3  
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2028,6 +2028,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lecture 4.6 - Introduction to Directed Acyclic Graph (DAG).pdf (PDF file)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2037,6 +2048,94 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#directed-acyclic-graphs-dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directed Acyclic Graphs (DAGs)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Directed Acyclic Graphs (DAGs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representing-dependencies-as-a-dag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representing Dependencies as a DAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduling-tasks-with-dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling Tasks with DAGs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topological-sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topological Sorting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longest-path-in-a-dag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Longest Path in a DAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2289,14 +2388,20 @@
 
 
 <div><h1 id="lecture-46-introduction-to-directed-acyclic-graph-dagpdf-pdf-file">Lecture 4.6 - Introduction to Directed Acyclic Graph (DAG).pdf (PDF file)</h1>
-<p><strong>Summary</strong>
-Directed Acyclic Graphs (DAGs) are graphical representations of tasks with dependencies. They are used to organize and schedule tasks, ensuring that tasks that must be completed before others are done first.</p>
-<p>DAGs consist of vertices (tasks) and edges (dependencies). An arrow from vertex A to vertex B indicates that task A must be completed before task B can begin.</p>
-<p>Typical questions addressed using DAGs include scheduling tasks while respecting dependencies and estimating the time required to complete all tasks.</p>
-<p>In a DAG, topological sorting finds a valid ordering of tasks, and finding the longest path determines the longest sequence of dependent tasks, providing an estimate of the time required to complete the project.
-<strong>Lec file</strong></p>
-<h1 id="lecture-46-introduction-to-directed-acyclic-graph-dagpdf-pdf-file_1">Lecture 4.6 - Introduction to Directed Acyclic Graph (DAG).pdf (PDF file)</h1>
-<p><embed alt="Alt text" src="../Lecture%204.6%20-%20Introduction%20to%20Directed%20Acyclic%20Graph%20%28DAG%29.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
+<p><strong>Summary</strong></p>
+<h2 id="directed-acyclic-graphs-dags">Directed Acyclic Graphs (DAGs)</h2>
+<h3 id="introduction">Introduction</h3>
+<p><strong>Directed Acyclic Graphs (DAGs)</strong> are a specialized type of graph used to represent dependencies or constraints in a system. Unlike their more general counterparts, directed graphs, DAGs do not contain any cycles or loops, meaning that it is impossible to move from one node to another while staying on the same edge.</p>
+<h3 id="representing-dependencies-as-a-dag">Representing Dependencies as a DAG</h3>
+<p>DAGs are commonly used to represent constraints or dependencies between tasks or events. Each node in the graph represents a task or event, while the edges represent the dependencies between them. If task A must be completed before task B can start, an edge will be drawn from A to B.</p>
+<h3 id="scheduling-tasks-with-dags">Scheduling Tasks with DAGs</h3>
+<p>One of the main applications of DAGs is scheduling tasks while respecting the dependencies between them. A valid schedule is one that follows the order specified by the DAG, ensuring that all dependencies are met.</p>
+<h3 id="topological-sorting">Topological Sorting</h3>
+<p>Topological sorting is a technique used to find an ordering of the nodes in a DAG that respects the dependencies between them. This ordering can be used to create a schedule or to determine the overall duration of a project.</p>
+<h3 id="longest-path-in-a-dag">Longest Path in a DAG</h3>
+<p>In some cases, we are interested in finding the longest path in a DAG. This represents the critical path, the sequence of tasks that determines the overall duration of the project.</p>
+<h3 id="summary">Summary</h3>
+<p>DAGs are a powerful tool for representing dependencies and constraints in a system. They are used in various applications, including scheduling, task management, and project planning. Key problems that can be solved using DAGs include topological sorting and finding the longest path.</p></div>
 
 
 

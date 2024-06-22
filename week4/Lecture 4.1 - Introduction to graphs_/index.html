@@ -16,7 +16,7 @@
         <link rel="prev" href="../Lecture%204.5%20-%20Applications%20of%20BFS%20and%20DFS/">
       
       
-        <link rel="next" href="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29_T/">
+        <link rel="next" href="../Lecture%204.2%20-%20Representing%20Graphs_/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -1788,6 +1788,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DFS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Lecture%204.1%20-%20Introduction%20to%20graphs_annotated/" class="md-nav__link">
         
   
@@ -1902,6 +1923,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lecture 4.1 - Introduction to graphs_.pdf (PDF file)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1912,48 +1944,97 @@
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29_T/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Lecture 4.4 - Depth First Search (DFS)_T.pdf (PDF file)
-  </span>
-  
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29_T/" class="md-nav__link">
-        
   
-  <span class="md-ellipsis">
-    Lecture 4.3 - Breadth First Search (BFS)_T.pdf (PDF file)
-  </span>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Graphs
+    </span>
+  </a>
   
-
-      </a>
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paths-and-reachability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paths and Reachability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Applications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-representation-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Representation in Python
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-traversal-and-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Traversal and Search
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimum-spanning-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimum Spanning Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shortest-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shortest Path
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-optimization-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Optimization Problems
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2013,6 +2094,27 @@
   
   <span class="md-ellipsis">
     Lecture 4.8 - Longest Path in DAGs.pdf (PDF file)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BFS_4_3%20_/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFS 4 3  
   </span>
   
 
@@ -2289,26 +2391,48 @@
 
 
 <div><h1 id="lecture-41-introduction-to-graphs_pdf-pdf-file">Lecture 4.1 - Introduction to graphs_.pdf (PDF file)</h1>
-<p><strong>Summary</strong>
-<strong>Graphs</strong></p>
-<p>Graphs are used to visually represent relationships between entities. Entities are represented as vertices (nodes), and relationships are represented as edges. Graphs can be directed (edges have a specific direction) or undirected (edges do not have a specific direction).</p>
-<p><strong>Paths and Reachability</strong></p>
-<p>A path is a sequence of connected edges. Reachability determines if there is a path from one vertex to another.</p>
-<p><strong>Graph Applications</strong></p>
-<p>Graphs have numerous practical applications, including:</p>
+<p><strong>Summary</strong></p>
+<h2 id="introduction-to-graphs">Introduction to Graphs</h2>
+<p><strong>Definition:</strong> A graph is a data structure that represents a set of objects (called vertices or nodes) and a set of relationships (called edges) between those objects.</p>
+<p><strong>Components:</strong>
+* <strong>Vertices:</strong> Entities or objects of interest.
+* <strong>Edges:</strong> Connections or relationships between vertices.</p>
+<p><strong>Types of Graphs:</strong></p>
 <ul>
-<li><strong>Map Colouring:</strong> Determining the minimum number of colors needed to colour a map so that adjacent areas have different colors.</li>
-<li><strong>Graph Colouring:</strong> Assigning colors to vertices such that adjacent vertices have different colors.</li>
-<li><strong>Vertex Cover:</strong> Finding the minimum set of vertices that cover all edges.</li>
-<li><strong>Independent Set:</strong> Identifying a set of vertices where no two vertices are connected by an edge.</li>
-<li><strong>Matching:</strong> Finding a set of non-overlapping edges that connect pairs of vertices.</li>
+<li><strong>Directed graphs:</strong> Edges have a direction, indicating a one-way relationship between vertices.</li>
+<li><strong>Undirected graphs:</strong> Edges do not have a direction, indicating a bidirectional relationship between vertices.</li>
 </ul>
-<p><strong>Concept Overview</strong></p>
+<h2 id="paths-and-reachability">Paths and Reachability</h2>
+<p><strong>Path:</strong> A sequence of vertices connected by edges.</p>
+<p><strong>Reachability:</strong> Determining whether there exists a path from one vertex to another in a directed graph.</p>
+<h2 id="graph-applications">Graph Applications</h2>
+<p>Graphs are widely used in various applications, including:</p>
 <ul>
-<li>Graphs represent relationships between entities.</li>
-<li>Directed graphs have edges with specific directions, while undirected graphs do not.</li>
-<li>Reachability is used to determine if one vertex can reach another through a path.</li>
-<li>Graph applications include map colouring, graph colouring, vertex cover, independent set, and matching.
+<li><strong>Map coloring:</strong> Determining the minimum number of colors needed to color a map without adjacent regions having the same color.</li>
+<li><strong>Vertex cover:</strong> Finding the minimum number of vertices that cover all edges in a graph.</li>
+<li><strong>Independent set:</strong> Identifying a subset of vertices that are not connected by any edges.</li>
+<li><strong>Matching:</strong> Assigning pairs of vertices (e.g., people, projects) based on compatibility or availability.</li>
+</ul>
+<h2 id="graph-representation-in-python">Graph Representation in Python</h2>
+<p>In Python, graphs can be represented using various data structures, including:</p>
+<ul>
+<li><strong>Adjacency list:</strong> A dictionary where each key represents a vertex and the corresponding value is a list of adjacent vertices.</li>
+<li><strong>Adjacency matrix:</strong> A 2D array where the rows and columns represent vertices, and a non-zero value indicates an edge between the corresponding vertices.</li>
+<li><strong>NetworkX library:</strong> A dedicated library for graph manipulation and analysis.</li>
+</ul>
+<h2 id="graph-traversal-and-search">Graph Traversal and Search</h2>
+<p><strong>Depth-first search (DFS):</strong> Traverses a graph by following edges until a dead end is reached, then backtracking to explore other paths.</p>
+<p><strong>Breadth-first search (BFS):</strong> Traverses a graph by visiting all vertices at the same level before moving to the next level.</p>
+<h2 id="minimum-spanning-tree">Minimum Spanning Tree</h2>
+<p>A minimum spanning tree is a subgraph of a connected graph that includes all vertices but has the minimum possible total edge weight.</p>
+<h2 id="shortest-path">Shortest Path</h2>
+<p>Finding the shortest path between two vertices in a graph is a fundamental graph problem with numerous applications, such as route planning and network optimization.</p>
+<h2 id="graph-optimization-problems">Graph Optimization Problems</h2>
+<p>Graphs can also be used to solve optimization problems, such as:</p>
+<ul>
+<li><strong>Maximum flow:</strong> Determining the maximum amount of flow that can pass through a network.</li>
+<li><strong>Minimum cut:</strong> Partitioning a graph into two disjoint sets while minimizing the number of edges between them.</li>
+<li><strong>Traveling salesman problem:</strong> Finding the shortest possible path that visits a set of cities and returns to the starting city.
 <strong>Lec file</strong></li>
 </ul>
 <h1 id="lecture-41-introduction-to-graphs_pdf-pdf-file_1">Lecture 4.1 - Introduction to graphs_.pdf (PDF file)</h1>

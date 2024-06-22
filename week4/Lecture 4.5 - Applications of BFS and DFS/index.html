@@ -1788,6 +1788,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../DFS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Lecture%204.1%20-%20Introduction%20to%20graphs_annotated/" class="md-nav__link">
         
   
@@ -1881,6 +1902,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lecture 4.5 - Applications of BFS and DFS.pdf (PDF file)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1890,6 +1922,94 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-breadth-first-search-and-depth-first-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of Breadth First Search and Depth First Search
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications of Breadth First Search and Depth First Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connectivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cycles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shortest-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shortest Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1908,48 +2028,6 @@
   
   <span class="md-ellipsis">
     Lecture 4.1 - Introduction to graphs_.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%204.4%20-%20Depth%20First%20Search%20%28DFS%29_T/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 4.4 - Depth First Search (DFS)_T.pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%204.3%20-%20Breadth%20First%20Search%20%28BFS%29_T/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 4.3 - Breadth First Search (BFS)_T.pdf (PDF file)
   </span>
   
 
@@ -2013,6 +2091,27 @@
   
   <span class="md-ellipsis">
     Lecture 4.8 - Longest Path in DAGs.pdf (PDF file)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BFS_4_3%20_/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFS 4 3  
   </span>
   
 
@@ -2289,47 +2388,161 @@
 
 
 <div><h1 id="lecture-45-applications-of-bfs-and-dfspdf-pdf-file">Lecture 4.5 - Applications of BFS and DFS.pdf (PDF file)</h1>
-<p><strong>Summary</strong>
-BFS and DFS are graph traversal algorithms that provide insights into a graph's structure and connectivity. Here's a summary of their applications: </p>
+<p><strong>Summary</strong></p>
+<h2 id="applications-of-breadth-first-search-and-depth-first-search">Applications of Breadth First Search and Depth First Search</h2>
+<p>Breadth First Search (BFS) and Depth First Search (DFS) are two fundamental graph traversal algorithms. They can be used to solve a variety of problems, including finding connected components, detecting cycles, and finding the shortest path between two vertices.</p>
+<h3 id="connectivity">Connectivity</h3>
+<p>BFS and DFS can be used to identify connected components in both undirected and directed graphs. A connected component is a set of vertices that are all reachable from each other. In an undirected graph, a connected component is simply a set of vertices that are connected by edges. In a directed graph, a connected component is a set of vertices that are all reachable from each other by following the direction of the edges.</p>
+<p>To find the connected components in a graph, you can use the following algorithm:</p>
 <ol>
-<li>Connectivity: </li>
-<li>BFS can identify connected components in an undirected graph, which are maximal sets of vertices that can reach each other. </li>
-<li>
-<p>DFS numbering can help determine if a directed graph is strongly connected, meaning there is a path between every pair of vertices in both directions. </p>
-</li>
-<li>
-<p>Cycles: </p>
-</li>
-<li>
-<p>Non-tree edges in a BFS or DFS tree indicate the presence of cycles in a graph. In a directed graph, only back edges (edges from a vertex to an ancestor in the DFS tree) create cycles. </p>
-</li>
-<li>
-<p>Strongly Connected Components (SCCs): </p>
-</li>
-<li>
-<p>DFS numbering can be used to decompose directed graphs into SCCs, where each component consists of vertices that are strongly connected to each other. </p>
-</li>
-<li>
-<p>Acyclic Graphs: </p>
-</li>
-<li>Directed acyclic graphs (DAGs) have no cycles and are useful for representing dependencies. </li>
-<li>
-<p>Topological sorting, which finds a valid order for completing tasks with dependencies, can be performed using DFS on DAGs. </p>
-</li>
-<li>
-<p>Other Features: </p>
-</li>
-<li>
-<p>DFS can also identify articulation points (vertices whose removal would disconnect the graph) and bridges (edges whose removal would disconnect the graph). </p>
-</li>
-<li>
-<p>Course Scheduling: </p>
-</li>
-<li>Given a set of courses with prerequisites, DFS can be used to find a valid sequence for completing the courses without violating any prerequisites.
-<strong>Lec file</strong></li>
+<li>Start at any vertex in the graph.</li>
+<li>Perform a BFS or DFS traversal of the graph, starting from the current vertex.</li>
+<li>Add all of the vertices that are visited during the traversal to the current connected component.</li>
+<li>Repeat steps 1-3 until all of the vertices in the graph have been visited.</li>
 </ol>
-<h1 id="lecture-45-applications-of-bfs-and-dfspdf-pdf-file_1">Lecture 4.5 - Applications of BFS and DFS.pdf (PDF file)</h1>
-<p><embed alt="Alt text" src="../Lecture%204.5%20-%20Applications%20of%20BFS%20and%20DFS.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
+<p>The output of the algorithm will be a set of connected components. Each connected component will be represented by a set of vertices.</p>
+<h3 id="cycles">Cycles</h3>
+<p>BFS and DFS can be used to detect cycles in both undirected and directed graphs. A cycle is a path that starts and ends at the same vertex. In an undirected graph, a cycle is simply a set of edges that form a closed loop. In a directed graph, a cycle is a set of edges that form a closed loop and follow the direction of the edges.</p>
+<p>To detect cycles in a graph, you can use the following algorithm:</p>
+<ol>
+<li>Start at any vertex in the graph.</li>
+<li>Perform a DFS traversal of the graph, starting from the current vertex.</li>
+<li>If you visit a vertex that has already been visited, then there is a cycle in the graph.</li>
+</ol>
+<p>The output of the algorithm will be a set of cycles. Each cycle will be represented by a set of edges.</p>
+<h3 id="shortest-path">Shortest Path</h3>
+<p>BFS can be used to find the shortest path between two vertices in an undirected graph. The shortest path between two vertices is the path with the fewest number of edges.</p>
+<p>To find the shortest path between two vertices in an undirected graph, you can use the following algorithm:</p>
+<ol>
+<li>Start at the source vertex.</li>
+<li>Perform a BFS traversal of the graph, starting from the source vertex.</li>
+<li>Keep track of the distance from the source vertex to each vertex that is visited.</li>
+<li>The shortest path to the destination vertex is the path with the smallest distance.</li>
+</ol>
+<p>The output of the algorithm will be the shortest path between the source vertex and the destination vertex. The shortest path will be represented by a set of edges.</p>
+<h3 id="other-applications">Other Applications</h3>
+<p>BFS and DFS can be used to solve a variety of other problems, including:</p>
+<ul>
+<li>Finding articulation points (cut vertices) and bridges (cut edges)</li>
+<li>Finding topological order in a directed acyclic graph</li>
+<li>Finding the minimum spanning tree of a graph</li>
+<li>Finding the maximum flow in a network</li>
+</ul>
+<p>BFS and DFS are powerful algorithms that can be used to solve a wide variety of problems. They are essential tools for any programmer who works with graphs.</p>
+<h3 id="summary">Summary</h3>
+<p>The following table summarizes the key features of BFS and DFS:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>BFS</th>
+<th>DFS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traversal order</td>
+<td>Level-by-level</td>
+<td>Depth-first</td>
+</tr>
+<tr>
+<td>Space complexity</td>
+<td>O(V)</td>
+<td>O(V)</td>
+</tr>
+<tr>
+<td>Time complexity</td>
+<td>O(E)</td>
+<td>O(E)</td>
+</tr>
+<tr>
+<td>Applications</td>
+<td>Finding connected components, detecting cycles, finding shortest path</td>
+<td>Finding articulation points, bridges, topological order</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example</h2>
+<p>The following Python code shows how to use BFS and DFS to find the connected components in a graph:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="sd">"""</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">  Perform a BFS traversal of the graph starting from the given start vertex.</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">  Args:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">    graph: The graph to traverse.</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">    start: The start vertex.</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="sd">  Returns:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="sd">    A set of connected components.</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="sd">  """</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  <span class="n">components</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">start</span><span class="p">])</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="n">vertex</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="k">if</span> <span class="n">vertex</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>      <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">vertex</span><span class="p">)</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>      <span class="n">components</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">vertex</span><span class="p">})</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>      <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">vertex</span><span class="p">]:</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>          <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>  <span class="k">return</span> <span class="n">components</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">  </span><span class="sd">"""</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="sd">  Perform a DFS traversal of the graph starting from the given start vertex.</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="sd">  Args:</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="sd">    graph: The graph to traverse.</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="sd">    start: The start vertex.</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="sd">  Returns:</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="sd">    A set of connected components.</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="sd">  """</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>  <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>  <span class="n">components</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>  <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>    <span class="n">vertex</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>    <span class="k">if</span> <span class="n">vertex</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>      <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">vertex</span><span class="p">)</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>      <span class="n">components</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">vertex</span><span class="p">})</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>      <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">vertex</span><span class="p">]:</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>        <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>          <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>  <span class="k">return</span> <span class="n">components</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>  <span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>    <span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>    <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>    <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>    <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>  <span class="p">}</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>  <span class="n">bfs_components</span> <span class="o">=</span> <span class="n">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">"BFS components:"</span><span class="p">,</span> <span class="n">bfs_components</span><span class="p">)</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>  <span class="n">dfs_components</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">"DFS components:"</span><span class="p">,</span> <span class="n">dfs_components</span><span class="p">)</span>
+</code></pre></div>
+<p>The output of the code is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>BFS components: [{0, 1, 2, 3}]
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>DFS components: [{0, 1, 2, 3}]
+</code></pre></div>
+<p>As you can see, both BFS and DFS found the same connected component in the graph.</p></div>
 
 
 
