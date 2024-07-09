@@ -1,6 +1,0 @@
-# Lecture 5.2 - Single Source Shortest Paths (Dijkstra_s algorithm).pdf (PDF file)
-**Summary**
-Dijkstra's algorithm finds the shortest paths from a single source vertex to every other vertex in a weighted graph with non-negative edge weights. Using a greedy approach, it iteratively selects the unvisited vertex with the shortest known distance, recomputes the distance to its neighbors, and updates the shortest distance accordingly. The algorithm's proof of correctness relies on the non-decreasing edge weights, and it has a time complexity of O(n^2), with an improvement to O(n + m) using an adjacency list representation of the graph. However, the bottleneck of identifying the vertex with the minimum distance remains unsolved and requires a more efficient data structure for removal of minimum elements.
-**Lec file**
-# Lecture 5.2 - Single Source Shortest Paths (Dijkstra_s algorithm).pdf (PDF file)
-![Alt text](<./Lecture 5.2 - Single Source Shortest Paths (Dijkstra_s algorithm).pdf>){ type=application/pdf style="min-height:100vh;width:100%" }

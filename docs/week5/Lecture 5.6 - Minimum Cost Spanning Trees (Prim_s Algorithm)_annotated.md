@@ -1,14 +1,39 @@
 # Lecture 5.6 - Minimum Cost Spanning Trees (Prim_s Algorithm)_annotated.pdf (PDF file)
 **Summary**
-Prim's algorithm is a technique used to generate a minimum cost spanning tree (MCST) from a given weighted undirected graph. An MCST is a tree that spans all vertices in the graph, and has the minimum total edge weight among all such trees. 
+**Minimum Cost Spanning Trees**
 
-The algorithm incrementally grows the MCST by adding the smallest weight edge from the tree to a vertex not yet in the tree. It begins with a single vertex and expands until it includes all vertices while adhering to the MCST principles. 
+**Definition:**
+A Minimum Cost Spanning Tree (MCST) of a weighted, undirected graph is a spanning tree with the minimum possible total edge weight.
 
-The correctness of Prim's algorithm is based on the Minimum Separator Lemma, which states that every MCST must include the minimum cost edge separating two non-empty subsets of vertices. This allows the algorithm to efficiently construct the MCST by selecting the smallest weight edge at each step. 
+**Strategy:**
+Prim's algorithm incrementally grows an MCST by adding the smallest edge from the current tree to a vertex not yet in the tree.
 
-The implementation involves tracking visited vertices, distances to the tree, and the nearest neighbor in the tree for each vertex. By continuously updating this information, the algorithm identifies the next vertex to add to the tree based on the minimum distance criterion. 
+**Correctness:**
+The Minimum Separator Lemma states that every MCST must include the minimum cost edge between any two non-empty subsets of vertices. Since Prim's algorithm always selects the smallest edge connecting the tree to outside vertices, it guarantees an MCST.
 
-Despite its simplicity, Prim's algorithm has a complexity of O(n2), where n is the number of vertices, even with adjacency lists. This is due to the need to repeatedly scan through the unvisited vertices to find the minimum distance. More efficient algorithms exist, such as Kruskal's algorithm, which has a complexity of O(E log E), but Prim's algorithm remains a fundamental and widely used approach for constructing MCSTs.
-**Lec file**
-# Lecture 5.6 - Minimum Cost Spanning Trees (Prim_s Algorithm)_annotated.pdf (PDF file)
-![Alt text](<./Lecture 5.6 - Minimum Cost Spanning Trees (Prim_s Algorithm)_annotated.pdf>){ type=application/pdf style="min-height:100vh;width:100%" }
+**Implementation:**
+
+* Initialize visited[v] to False and distance[v] to infinity for all vertices.
+* Mark a starting vertex as visited and set its distance to 0.
+* For each iteration:
+    * Find the unvisited vertex with the smallest distance to the tree.
+    * Add that vertex to the tree and update the distances of its neighbors to the tree.
+* Return the edges in the spanning tree.
+
+**Improved Implementation:**
+
+* Keep track of the nearest neighbor of each vertex in the tree.
+* Scan all non-tree vertices to find the next vertex with minimum distance to the tree.
+* This optimization reduces the complexity to O(n) per iteration.
+
+**Complexity:**
+
+* The original implementation takes O(n^2) time.
+* The improved implementation takes O(n^2) time with an adjacency matrix and O(n log n) time with an adjacency list.
+
+**Summary:**
+
+* Prim's algorithm constructs an MCST incrementally.
+* The Minimum Separator Lemma ensures its correctness.
+* The improved implementation reduces the complexity to O(n^2) or O(n log n) depending on the data structure used.
+* The bottleneck lies in efficiently identifying the vertex with the smallest distance to the tree.

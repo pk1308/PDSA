@@ -1,13 +1,49 @@
 # Lecture 5.5 - Minimum Cost Spanning Trees_annotated.pdf (PDF file)
 **Summary**
-Minimum Cost Spanning Trees (MCSTs) are used to connect a set of nodes with the minimum total cost. They have applications in areas such as road construction and network design. A tree is a graph with no cycles, and a spanning tree is a tree that connects all the nodes in a graph. A MCST is a spanning tree with the minimum total edge weight.
+## Minimum Cost Spanning Trees (MCSTs)
 
-MCSTs can be constructed using Kruskal's or Prim's algorithm. Kruskal's algorithm sorts the edges in ascending order of weight and adds them to the MCST until all nodes are connected. Prim's algorithm starts with a single node and iteratively adds the lowest-cost edge that connects an existing node to an unconnected node.
+### Overview
 
-Some facts about trees that are useful for building MCSTs include:
-- A tree with n vertices has n-1 edges.
+In a network, a spanning tree is a subset of the edges that connects all the vertices without creating any cycles. When each edge has an associated cost, the goal of finding a minimum cost spanning tree (MCST) is to select the spanning tree with the lowest total cost.
+
+### Applications
+
+MCSTs have numerous applications in real-world scenarios:
+
+- **Infrastructure planning:** Designing road networks, power grids, or communication systems by minimizing the total cost of connecting all locations.
+- **Cable redundancy:** Ensuring that there are redundant network connections by adding a minimum number of backup cables to an existing fiber optic network.
+
+### Spanning Trees
+
+A spanning tree is a tree that connects all the vertices in a graph. Key facts about trees include:
+
+- A tree with n vertices has exactly n-1 edges.
 - Adding an edge to a tree creates a cycle.
 - Every pair of vertices in a tree is connected by a unique path.
-**Lec file**
-# Lecture 5.5 - Minimum Cost Spanning Trees_annotated.pdf (PDF file)
-![Alt text](<./Lecture 5.5 - Minimum Cost Spanning Trees_annotated.pdf>){ type=application/pdf style="min-height:100vh;width:100%" }
+
+### Building Minimum Cost Spanning Trees
+
+Two primary algorithms for finding MCSTs are:
+
+1. **Prim's algorithm:** Starts with the smallest edge and gradually adds edges that connect components without creating cycles.
+2. **Kruskal's algorithm:** Sorts edges in ascending order of weight and then connects components in that order, avoiding cycles.
+
+### Prim's Algorithm
+
+**Steps:**
+
+1. Initialize a set S to contain a single vertex.
+2. While S does not contain all vertices:
+    - Find the lowest-cost edge (u, v) that connects a vertex in S to a vertex not in S.
+    - Add (u, v) to S.
+
+### Kruskal's Algorithm
+
+**Steps:**
+
+1. Sort the edges in ascending order of weight.
+2. Create a set of disjoint sets, each containing a single vertex.
+3. For each edge (u, v) in order:
+    - If u and v are in different sets:
+        - Add (u, v) to the MCST.
+        - Merge the sets containing u and v.
