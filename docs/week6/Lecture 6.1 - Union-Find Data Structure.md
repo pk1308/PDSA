@@ -1,4 +1,5 @@
-# Lecture 6.1 - Union-Find Data Structure.pdf (PDF file)
+# Lecture 6.1 - Union-Find Data Structure
+
 **Summary**
 **Introduction**
 
@@ -39,9 +40,7 @@ This is achieved by always merging smaller sets into larger ones and ensuring th
 The Union-Find data structure has various applications in graph algorithms and optimization problems:
 
 - **Kruskal's Algorithm:** Kruskal's algorithm finds the minimum spanning tree in a weighted graph. It uses the Union-Find data structure to merge components representing connected vertices in the graph, ensuring that the resulting tree is a minimum spanning tree.
-
 - **Cycle Detection in Graphs:** The Union-Find data structure can be used to detect cycles in a graph. By maintaining sets of vertices that are connected by edges, it can quickly determine if two vertices belong to the same set, indicating the presence of a cycle.
-
 - **Disjoint Set Partitioning:** The Union-Find data structure can be used to partition a set of elements into disjoint subsets, based on some criteria or relationship between the elements. This partitioning can be useful in various optimization problems and data analysis tasks.
 
 **Summary**
@@ -52,6 +51,8 @@ The Union-Find data structure efficiently maintains disjoint sets of elements an
 
 - Cormen, Thomas H., et al. "Introduction to Algorithms, 3rd Edition." MIT Press, 2009.
 - Skiena, Steven S. "The Algorithm Design Manual, 2nd Edition." Springer, 2008.
-**Lec file**
+  **Lec file**
+
 # Lecture 6.1 - Union-Find Data Structure.pdf (PDF file)
-![Alt text](<./Lecture 6.1 - Union-Find Data Structure.pdf>){ type=application/pdf style="min-height:100vh;width:100%" }
+
+![Alt text](./Lecture 6.1 - Union-Find Data Structure.pdf){ type=application/pdf style="min-height:100vh;width:100%" }
