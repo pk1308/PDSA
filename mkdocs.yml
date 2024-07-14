@@ -18,7 +18,6 @@ nav:
 - week5:
   - week5/Lecture 5.6 - Minimum Cost Spanning Trees (Prim_s Algorithm)_annotated.md
   - week5/dijkstra_5_2.md
-  - week5/Lecture 5.2 - Single Source Shortest Paths (Dijkstra_s algorithm).md
   - week5/bellman_ford_5_3.md
   - week5/Lecture 5.1 - Shortest Paths in Weighted Graphs_annotated.md
   - week5/Lecture 5.4 - All Pairs Shortest Paths (Floyd-Warshall algorithm)_annotated.md
@@ -29,7 +28,11 @@ nav:
   - week5/floyd_warshall_5_4.md
   - week5/kruskal.md
 - week6:
+  - week6/Lecture 6.4 - Using Heaps in Algorithms.md
   - week6/Lecture 6.1 - Union-Find Data Structure.md
+  - week6/Lecture 6.2 - Priority Queues.md
+  - week6/Lecture 6.5 - Search Trees.md
+  - week6/Lecture 6.3 - Heaps.md
 - week1:
   - week1/p_session.md
   - week1/exception_handling.md
@@ -61,6 +64,7 @@ nav:
   - week4/DFS_4_4.md
   - week4/Lecture 4.3 - Breadth First Search (BFS)_.md
   - week4/BFS_4_3.md
+  - week4/possible_degree.md
   - week4/DFS.md
   - week4/Lecture 4.1 - Introduction to graphs_annotated.md
   - week4/longest_path4_8.md
