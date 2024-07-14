@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../../week5/kruskal/">
+        <link rel="prev" href="../Lecture%206.4%20-%20Using%20Heaps%20in%20Algorithms/">
       
       
-        <link rel="next" href="../../week1/p_session/">
+        <link rel="next" href="../Lecture%206.2%20-%20Priority%20Queues/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Lecture 6.1 - Union-Find Data Structure.pdf (PDF file) - PDSA</title>
+        <title>Lecture 6.1 - Union-Find Data Structure - PDSA</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-61-union-find-data-structurepdf-pdf-file" class="md-skip">
+        <a href="#lecture-61-union-find-data-structure" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 6.1 - Union-Find Data Structure.pdf (PDF file)
+              Lecture 6.1 - Union-Find Data Structure
             
           </span>
         </div>
@@ -277,7 +277,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../Lecture%206.4%20-%20Using%20Heaps%20in%20Algorithms/" class="md-tabs__link">
           
   
   week6
@@ -797,27 +797,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week5/Lecture%205.2%20-%20Single%20Source%20Shortest%20Paths%20%28Dijkstra_s%20algorithm%29/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 5.2 - Single Source Shortest Paths (Dijkstra_s algorithm).pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week5/bellman_ford_5_3/" class="md-nav__link">
         
   
@@ -1035,6 +1014,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture%206.4%20-%20Using%20Heaps%20in%20Algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6.4 - Using Heaps in Algorithms.pdf (PDF file)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1051,12 +1051,75 @@
         
   
   <span class="md-ellipsis">
-    Lecture 6.1 - Union-Find Data Structure.pdf (PDF file)
+    Lecture 6.1 - Union-Find Data Structure
   </span>
   
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture%206.2%20-%20Priority%20Queues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6.2 - Priority Queues.pdf (PDF file)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture%206.5%20-%20Search%20Trees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6.5 - Search Trees.pdf (PDF file)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture%206.3%20-%20Heaps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6.3 - Heaps.pdf (PDF file)
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1798,6 +1861,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../week4/possible_degree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Possible degree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../week4/DFS/" class="md-nav__link">
         
   
@@ -2288,7 +2372,7 @@
   
 
 
-<div><h1 id="lecture-61-union-find-data-structurepdf-pdf-file">Lecture 6.1 - Union-Find Data Structure.pdf (PDF file)</h1>
+<div><h1 id="lecture-61-union-find-data-structure">Lecture 6.1 - Union-Find Data Structure</h1>
 <p><strong>Summary</strong>
 <strong>Introduction</strong></p>
 <p>The Union-Find data structure is a fundamental algorithm used to manage and manipulate disjoint sets or partitions of elements. It efficiently performs two key operations: finding which set an element belongs to (Find) and merging sets containing specific elements (Union). This data structure finds applications in various algorithms and optimization problems, such as Kruskal's algorithm for minimum spanning trees and detecting connected components in graphs.</p>
@@ -2316,15 +2400,9 @@
 <p><strong>Applications</strong></p>
 <p>The Union-Find data structure has various applications in graph algorithms and optimization problems:</p>
 <ul>
-<li>
-<p><strong>Kruskal's Algorithm:</strong> Kruskal's algorithm finds the minimum spanning tree in a weighted graph. It uses the Union-Find data structure to merge components representing connected vertices in the graph, ensuring that the resulting tree is a minimum spanning tree.</p>
-</li>
-<li>
-<p><strong>Cycle Detection in Graphs:</strong> The Union-Find data structure can be used to detect cycles in a graph. By maintaining sets of vertices that are connected by edges, it can quickly determine if two vertices belong to the same set, indicating the presence of a cycle.</p>
-</li>
-<li>
-<p><strong>Disjoint Set Partitioning:</strong> The Union-Find data structure can be used to partition a set of elements into disjoint subsets, based on some criteria or relationship between the elements. This partitioning can be useful in various optimization problems and data analysis tasks.</p>
-</li>
+<li><strong>Kruskal's Algorithm:</strong> Kruskal's algorithm finds the minimum spanning tree in a weighted graph. It uses the Union-Find data structure to merge components representing connected vertices in the graph, ensuring that the resulting tree is a minimum spanning tree.</li>
+<li><strong>Cycle Detection in Graphs:</strong> The Union-Find data structure can be used to detect cycles in a graph. By maintaining sets of vertices that are connected by edges, it can quickly determine if two vertices belong to the same set, indicating the presence of a cycle.</li>
+<li><strong>Disjoint Set Partitioning:</strong> The Union-Find data structure can be used to partition a set of elements into disjoint subsets, based on some criteria or relationship between the elements. This partitioning can be useful in various optimization problems and data analysis tasks.</li>
 </ul>
 <p><strong>Summary</strong></p>
 <p>The Union-Find data structure efficiently maintains disjoint sets of elements and supports the Find and Union operations. Its improved implementation, coupled with an amortized analysis, provides an efficient way to manage and manipulate sets, making it a valuable tool for solving a range of problems in computer science and algorithms.</p>
@@ -2332,9 +2410,9 @@
 <ul>
 <li>Cormen, Thomas H., et al. "Introduction to Algorithms, 3rd Edition." MIT Press, 2009.</li>
 <li>Skiena, Steven S. "The Algorithm Design Manual, 2nd Edition." Springer, 2008.
-<strong>Lec file</strong></li>
+  <strong>Lec file</strong></li>
 </ul>
-<h1 id="lecture-61-union-find-data-structurepdf-pdf-file_1">Lecture 6.1 - Union-Find Data Structure.pdf (PDF file)</h1>
+<h1 id="lecture-61-union-find-data-structurepdf-pdf-file">Lecture 6.1 - Union-Find Data Structure.pdf (PDF file)</h1>
 <p><embed alt="Alt text" src="../Lecture%206.1%20-%20Union-Find%20Data%20Structure.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
 
 

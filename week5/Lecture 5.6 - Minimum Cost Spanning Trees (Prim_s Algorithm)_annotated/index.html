@@ -277,7 +277,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../week6/Lecture%206.1%20-%20Union-Find%20Data%20Structure/" class="md-tabs__link">
+        <a href="../../week6/Lecture%206.4%20-%20Using%20Heaps%20in%20Algorithms/" class="md-tabs__link">
           
   
   week6
@@ -812,27 +812,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture%205.2%20-%20Single%20Source%20Shortest%20Paths%20%28Dijkstra_s%20algorithm%29/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 5.2 - Single Source Shortest Paths (Dijkstra_s algorithm).pdf (PDF file)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../bellman_ford_5_3/" class="md-nav__link">
         
   
@@ -1048,11 +1027,95 @@
   
   
     <li class="md-nav__item">
+      <a href="../../week6/Lecture%206.4%20-%20Using%20Heaps%20in%20Algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6.4 - Using Heaps in Algorithms.pdf (PDF file)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../week6/Lecture%206.1%20-%20Union-Find%20Data%20Structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 6.1 - Union-Find Data Structure.pdf (PDF file)
+    Lecture 6.1 - Union-Find Data Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week6/Lecture%206.2%20-%20Priority%20Queues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6.2 - Priority Queues.pdf (PDF file)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week6/Lecture%206.5%20-%20Search%20Trees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6.5 - Search Trees.pdf (PDF file)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week6/Lecture%206.3%20-%20Heaps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6.3 - Heaps.pdf (PDF file)
   </span>
   
 
@@ -1798,6 +1861,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../week4/possible_degree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Possible degree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../week4/DFS/" class="md-nav__link">
         
   
@@ -2290,14 +2374,42 @@
 
 <div><h1 id="lecture-56-minimum-cost-spanning-trees-prim_s-algorithm_annotatedpdf-pdf-file">Lecture 5.6 - Minimum Cost Spanning Trees (Prim_s Algorithm)_annotated.pdf (PDF file)</h1>
 <p><strong>Summary</strong>
-Prim's algorithm is a technique used to generate a minimum cost spanning tree (MCST) from a given weighted undirected graph. An MCST is a tree that spans all vertices in the graph, and has the minimum total edge weight among all such trees. </p>
-<p>The algorithm incrementally grows the MCST by adding the smallest weight edge from the tree to a vertex not yet in the tree. It begins with a single vertex and expands until it includes all vertices while adhering to the MCST principles. </p>
-<p>The correctness of Prim's algorithm is based on the Minimum Separator Lemma, which states that every MCST must include the minimum cost edge separating two non-empty subsets of vertices. This allows the algorithm to efficiently construct the MCST by selecting the smallest weight edge at each step. </p>
-<p>The implementation involves tracking visited vertices, distances to the tree, and the nearest neighbor in the tree for each vertex. By continuously updating this information, the algorithm identifies the next vertex to add to the tree based on the minimum distance criterion. </p>
-<p>Despite its simplicity, Prim's algorithm has a complexity of O(n2), where n is the number of vertices, even with adjacency lists. This is due to the need to repeatedly scan through the unvisited vertices to find the minimum distance. More efficient algorithms exist, such as Kruskal's algorithm, which has a complexity of O(E log E), but Prim's algorithm remains a fundamental and widely used approach for constructing MCSTs.
-<strong>Lec file</strong></p>
-<h1 id="lecture-56-minimum-cost-spanning-trees-prim_s-algorithm_annotatedpdf-pdf-file_1">Lecture 5.6 - Minimum Cost Spanning Trees (Prim_s Algorithm)_annotated.pdf (PDF file)</h1>
-<p><embed alt="Alt text" src="../Lecture%205.6%20-%20Minimum%20Cost%20Spanning%20Trees%20%28Prim_s%20Algorithm%29_annotated.pdf" style="min-height:100vh;width:100%" type="application/pdf"></embed></p></div>
+<strong>Minimum Cost Spanning Trees</strong></p>
+<p><strong>Definition:</strong>
+A Minimum Cost Spanning Tree (MCST) of a weighted, undirected graph is a spanning tree with the minimum possible total edge weight.</p>
+<p><strong>Strategy:</strong>
+Prim's algorithm incrementally grows an MCST by adding the smallest edge from the current tree to a vertex not yet in the tree.</p>
+<p><strong>Correctness:</strong>
+The Minimum Separator Lemma states that every MCST must include the minimum cost edge between any two non-empty subsets of vertices. Since Prim's algorithm always selects the smallest edge connecting the tree to outside vertices, it guarantees an MCST.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>Initialize visited[v] to False and distance[v] to infinity for all vertices.</li>
+<li>Mark a starting vertex as visited and set its distance to 0.</li>
+<li>For each iteration:<ul>
+<li>Find the unvisited vertex with the smallest distance to the tree.</li>
+<li>Add that vertex to the tree and update the distances of its neighbors to the tree.</li>
+</ul>
+</li>
+<li>Return the edges in the spanning tree.</li>
+</ul>
+<p><strong>Improved Implementation:</strong></p>
+<ul>
+<li>Keep track of the nearest neighbor of each vertex in the tree.</li>
+<li>Scan all non-tree vertices to find the next vertex with minimum distance to the tree.</li>
+<li>This optimization reduces the complexity to O(n) per iteration.</li>
+</ul>
+<p><strong>Complexity:</strong></p>
+<ul>
+<li>The original implementation takes O(n^2) time.</li>
+<li>The improved implementation takes O(n^2) time with an adjacency matrix and O(n log n) time with an adjacency list.</li>
+</ul>
+<p><strong>Summary:</strong></p>
+<ul>
+<li>Prim's algorithm constructs an MCST incrementally.</li>
+<li>The Minimum Separator Lemma ensures its correctness.</li>
+<li>The improved implementation reduces the complexity to O(n^2) or O(n log n) depending on the data structure used.</li>
+<li>The bottleneck lies in efficiently identifying the vertex with the smallest distance to the tree.</li>
+</ul></div>
 
 
 
