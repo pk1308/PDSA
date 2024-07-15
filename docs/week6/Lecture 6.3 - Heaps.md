@@ -1,4 +1,5 @@
 # Lecture 6.3 - Heaps.pdf (PDF file)
+
 **Summary**
 **Heaps**
 
@@ -50,7 +51,7 @@ Heaps can be used to solve a wide variety of problems, including:
 
 Heaps can be implemented using a variety of data structures, including arrays and linked lists. The following is a simple implementation of a max-heap using an array:
 
-```
+```python
 class MaxHeap:
     def __init__(self):
         self.heap = []

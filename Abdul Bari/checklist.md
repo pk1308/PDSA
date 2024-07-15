@@ -62,16 +62,14 @@
 
 ---
 
-
-
 * [ ] [4.3 Matrix Chain Multiplication - Dynamic Programming](https://youtube.com/watch?v=prx1psByp7U) - 22m 59s
 * [ ] [[New] Matrix Chain Multiplication using Dynamic Programming Formula](https://youtube.com/watch?v=_WncuhSJZyA) - 52m 1s
 * [ ] [4.3.1 Matrix Chain Multiplication (Program) - Dynamic Programming](https://youtube.com/watch?v=eKkXU3uu2zk) - 18m 40s
 * [ ] [4.4 Bellman Ford Algorithm - Single Source Shortest Path - Dynamic Programming](https://youtube.com/watch?v=FtN3BYH2Zes) - 17m 12s
 * [ ] [4.5 0/1 Knapsack - Two Methods - Dynamic Programming](https://youtube.com/watch?v=nLmhmB6NzcM) - 28m 24s
 * [ ] [4.5.1 0/1 Knapsack Problem (Program) - Dynamic Programming](https://youtube.com/watch?v=zRza99HPvkQ) - 16m 59s
-* [ ] [4.6 Optimal Binary Search Tree (Successful Search Only) - Dynamic Programming](https://youtube.com/watch?v=vLS-zRCHo-Y) - 30m 19s
-* [ ] [4.6.2 [New] Optimal Binary Search Tree Successful and Unsuccessful Probability - Dynamic Programming](https://youtube.com/watch?v=wAy6nDMPYAE) - 56m 59s
+* [X] [4.6 Optimal Binary Search Tree (Successful Search Only) - Dynamic Programming](https://youtube.com/watch?v=vLS-zRCHo-Y) - 30m 19s
+* [X] [4.6.2 [New] Optimal Binary Search Tree Successful and Unsuccessful Probability - Dynamic Programming](https://youtube.com/watch?v=wAy6nDMPYAE) - 56m 59s
 * [ ] [4.7 [New] Traveling Salesman Problem - Dynamic Programming using Formula](https://youtube.com/watch?v=Q4zHb-Swzro) - 17m 18s
 * [ ] [4.8 Reliability Design - Dynamic Programming](https://youtube.com/watch?v=uJOmqBwENB8) - 26m 31s
 * [ ] [4.9 Longest Common Subsequence (LCS)  - Recursion and Dynamic Programming](https://youtube.com/watch?v=sSno9rV8Rhg) - 23m 35s
