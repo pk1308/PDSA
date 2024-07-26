@@ -15,6 +15,12 @@ nav:
   - week3/3_5lec.md
   - week3/quicksort_anaylsis_3.2.md
   - week3/list&dictionary_imp_3_9.md
+- week8:
+  - week8/Lecture 8.1 - Divide and Conquer-Counting inversions.md
+  - week8/Lecture 8.4 - Divide and Conquer-Recursion Trees.md
+  - week8/Lecture 8.2 - Divide and Conquer-Closest Pair of Points.md
+  - week8/Lecture 8.5 - Divide and Conquer-Quick Select.md
+  - week8/Lecture 8.3 - Divide and Conquer-Integer Multiplication.md
 - week5:
   - week5/Lecture 5.6 - Minimum Cost Spanning Trees (Prim_s Algorithm)_annotated.md
   - week5/dijkstra_5_2.md
@@ -31,6 +37,7 @@ nav:
   - week6/Lecture 6.4 - Using Heaps in Algorithms.md
   - week6/Lecture 6.1 - Union-Find Data Structure.md
   - week6/Lecture 6.2 - Priority Queues.md
+  - week6/inprepost.md
   - week6/Lecture 6.5 - Search Trees.md
   - week6/Lecture 6.3 - Heaps.md
 - week1:
@@ -58,6 +65,11 @@ nav:
   - week2/selection_sort_2_5.md
   - week2/lec2.1.md
   - week2/grpa.md
+- week7:
+  - week7/Lecture 7.1 - Balanced Search Trees.md
+  - week7/Lecture 7.4 - Greedy Algorithms-Huffman Coding.md
+  - week7/Lecture 7.2 - Greedy Algorithms-Interval Scheduling.md
+  - week7/Lecture 7.3 - Greedy Algorithms-Minimizing Lateness.md
 - week4:
   - week4/pending.md
   - week4/topologoical_sorting.md

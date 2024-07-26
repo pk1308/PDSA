@@ -90,6 +90,8 @@ def write_tree_to_markdown(base_path, output_file):
     # Add .git to the ignore patterns
     ignore_patterns.append(".git")
     ignore_patterns.append("site")
+    ignore_patterns.append(".trunk")
+    
 
     tree_str = generate_tree(base_path, ignore_patterns=ignore_patterns)
     with open(output_file, "w") as f:
